@@ -1,3 +1,4 @@
-# FIND-UI
+Pre requisites
 
-This Repo hosts the UI for the FIND project, it's built on top of Twitter's Bootstrap framework..
+Install node
+Install npm-watch 
