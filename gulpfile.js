@@ -1,10 +1,3 @@
-/**
-gulp commands
-dist - 
-watch - 
-optimize -
-*/
-
 var gulp = require('gulp');
 var del = require('del');
 
@@ -20,6 +13,27 @@ var jade = require('gulp-jade');
 
 
 //var browserSync = require('browser-sync');
+//creates the shortcuts to be able to access gulp plugins as plugins.uglify etc
+
+var gulpLoadPlugins = require('gulp-load-plugins');
+
+// gulpLoadPlugins({
+//     rename: {
+//         'gulp-minify-css': 'minifycss',
+//         'gulp-minify-html': 'minifyhtml'
+//     }
+// });
+
+// gulpLoadPlugins({
+//     pattern: ['gulp-*', 'gulp.*'], // the glob(s) to search for
+//     config: 'package.json', // where to find the plugins, by default  searched up from process.cwd()
+//     scope: ['dependencies', 'devDependencies', 'peerDependencies'], // which keys in the config to look within
+//     replaceString: /^gulp(-|\.)/, // what to remove from the name of the module when adding it to the context
+//     camelize: true, // if true, transforms hyphenated plugins names to camel case
+//     lazy: true, // whether the plugins should be lazy loaded on demand
+//     rename: {} // a mapping of plugins to rename
+// });
+
 var plugins = require('gulp-load-plugins')();
 
 var app_dir = {
@@ -27,7 +41,7 @@ var app_dir = {
     tests: __dirname + "/tests/",
     dist: __dirname + "/dist/",
     css: "**/*.css",
-    js: "**/*.js",
+    js: "app/**/*.js",
     images: "app/images",
     html: "**/*.htm"
 };
@@ -45,9 +59,7 @@ gulp.task('dist-delete', function(cb) {
 });
 
 
-
-
-/*********Distributable************/
+/*********CLean copy************/
 
 gulp.task('dist-copy-clean', function() {
     console.log(">>>>>>>> cleaning up the dist folder");
@@ -56,17 +68,20 @@ gulp.task('dist-copy-clean', function() {
         .pipe(gulp.dest(app_dir.dist))
 });
 
+
+/** minify**/
+
 gulp.task('dist-minify-css', function() {
     console.log("minifying CSS");
     return gulp.src(app_dir.dist + app_dir.css)
-        .pipe($.minifyCss())
+        .pipe(plugins.minifyCss())
         .pipe(gulp.dest(app_dir.dist))
 });
 
 gulp.task('dist-uglify-js', function() {
     console.log(">>>>>>>> Uglifying JS");
     return gulp.src(app_dir.dist + app_dir.js)
-        .pipe($.uglify())
+        .pipe(plugins.uglify())
         .pipe(gulp.dest(app_dir.dist))
 });
 
@@ -77,14 +92,14 @@ gulp.task('dist-minify-html', function() {
         spare: true
     };
     return gulp.src(app_dir.src + app_dir.html)
-        .pipe(minifyhtml(opts))
+        .pipe(plugins.minifyHtml(opts))
         .pipe(gulp.dest(app_dir.dist))
 });
 
 gulp.task('dist-minify-image', function() {
     console.log(">>>>>>>> Minifying Images");
     return gulp.src(app_dir.src + app_dir.images + "/**/*")
-        .pipe(imagemin({
+        .pipe(plugins.imagemin({
             optimizationLevel: 3,
             progressive: true,
             interlaced: true
@@ -92,14 +107,15 @@ gulp.task('dist-minify-image', function() {
         .pipe(gulp.dest(app_dir.dist + app_dir.images))
 });
 
-gulp.task('dist-compile-coffee', function() {
-    console.log(">>>>>>>> Compile Coffeescript");
-    return gulp.src(app_dir.tests + "**/*.coffee") // path to your file
-        .pipe(coffee())
-        .pipe(gulp.dest(app_dir.tests));
-});
+// gulp.task('dist-compile-coffee', function() {
+//     console.log(">>>>>>>> Compile Coffeescript");
+//     return gulp.src(app_dir.tests + "**/*.coffee") // path to your file
+//         .pipe(coffee())
+//         .pipe(gulp.dest(app_dir.tests));
+// });
 
-gulp.task('dist', ['dist-minify-css', 'dist-uglify-js', 'dist-minify-html', 'dist-minify-image', 'dist-compile-coffee']);
+//gulp.task('dist-minify', ['dist-minify-css', 'dist-uglify-js', 'dist-minify-html', 'dist-minify-image']);
+gulp.task('dist-minify', ['dist-minify-css', 'dist-uglify-js', 'dist-minify-html', 'dist-minify-image']);
 
 
 
@@ -109,7 +125,7 @@ gulp.task('dist', ['dist-minify-css', 'dist-uglify-js', 'dist-minify-html', 'dis
 
 gulp.task('compile-jade', function() {
     return gulp.src(app_dir.src + '**/*.jade')
-        .pipe(jade({
+        .pipe(plugins.jade({
             pretty: true
         }))
         .pipe(gulp.dest(app_dir.src))
@@ -118,7 +134,7 @@ gulp.task('compile-jade', function() {
 gulp.task('compile-stylus', function() {
     console.log("COMPILING");
     return gulp.src(app_dir.src + '**/*.styl')
-        .pipe(stylus({
+        .pipe(plugins.stylus({
             errors: true,
             pretty: true
         }))
@@ -128,7 +144,7 @@ gulp.task('compile-stylus', function() {
 gulp.task('autoprefix-css', ['compile-stylus'], function() {
     console.log("AUTO PREFIXING");
     return gulp.src(app_dir.src + '**/*.css')
-        .pipe(autoprefixer(["last 2 versions"], {
+        .pipe(plugins.autoprefixer(["last 2 versions"], {
             cascade: true
         }))
         .pipe(gulp.dest(app_dir.src))

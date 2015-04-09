@@ -25,7 +25,7 @@
     "homepage": "https://github.com/USStateDept/FIND-UI",
 
     "scripts": {
-        "build": "gulp dist-delete && gulp dist",
+        "dist": "gulp dist-delete && gulp dist-copy-clean && gulp dist-minify",
         "watch": "gulp watch"
     },
 
