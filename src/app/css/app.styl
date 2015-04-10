@@ -1,10 +1,126 @@
 /*Variables Stylus*/	
 @import "variables.styl"
 
-html, body
-	min-height 2000px
-
+// @font-face
+// 	font-family 'Roboto'
+// 	src url('Roboto-Medium-webfont.eot')
+// 	src url('Roboto-Medium-webfont.eot?#iefix') format('embedded-opentype'),
+// 		url('Roboto-Medium-webfont.woff') format('woff'),
+// 		url('Roboto-Medium-webfont.ttf') format('truetype'),
+// 		url('Roboto-Medium-webfont.svg#RobotoMedium') format('svg');
+// 	font-weight 300
+// 	font-style normal
 	
+// @font-face
+// 	font-family 'Roboto'
+// 	src url('Roboto-Regular-webfont.eot')
+// 	src url('Roboto-Regular-webfont.eot?#iefix') format('embedded-opentype'),
+// 		url('Roboto-Regular-webfont.woff') format('woff'),
+// 		url('Roboto-Regular-webfont.ttf') format('truetype'),
+// 		url('Roboto-Regular-webfont.svg#RobotoRegular') format('svg');
+// 	font-weight 300
+// 	font-style normal
+
+html, body
+	//min-height 2000px
+	padding-top 30px
+	font-family $family
+
+.app .navbar-default
+	background-color $bgMedium
+	
+	.navbar-nav > .active > a
+		background-color $bgDark
+
+	.navbar-nav > .active > a,
+	.navbar-nav > li > a
+		color $colorLight
+		font-weight $weightMedium
+		font-size $sizeMenu
+		font-style normal
+		
+		
+	
+	.navbar-nav > li:nth-child(2) > a
+		font-weight $weightLight
+
+.app .navbar-brand
+	color $colorLight
+	font-weight $weightMedium
+	font-style normal
+	font-size $sizeBrand
+	padding 20px
+	
+.app .navbar-collapse.collapse
+	height $heightHeader !important
+	
+.app .bg-light
+	background-color $bgLight
+	
+.app .bg-dark
+	background-color $bgDark
+	
+.app .bg-medium
+	background-color $bgMedium
+	
+.app .font-light
+	color $colorLight
+	
+.app .font-dark
+	color $colorDark
+	
+.app .well
+	border-radius $radius0
+	border none
+	box-shadow none
+	
+.app .bg-container
+	background-color $bgContainer
+	
+.app .jumbotron	
+	border-radius $radius0
+	
+	h1
+		font-size 46px
+		font-weight $weightLight
+		font-style normal
+		color $colorLight
+		text-align center
+		padding-bottom 20px
+	p
+		font-size 28px
+		font-weight $weightLight
+		font-style normal
+		color $colorLight
+		text-align center
+		
+	.main-search
+		width 60%
+		padding 10px
+		border-radius $radius5
+		border none
+		color $colorDark
+		
+.app .footer
+	
+	h1
+		font-size 46px
+		font-weight $weightLight
+		font-style normal
+		color $colorLight
+		text-align center
+		padding-bottom 20px
+		
+/****** MEDIA QUERIES ************/
+	
+
+@media (min-width: 768px)
+	
+	.app .jumbotron
+		padding 10px
+		
+	.navbar-nav > li >a
+		padding 20px
 
 /*App Stylus*/	
 //@import "../js/components/app/appStyle.styl"
@@ -20,5 +136,3 @@ html, body
 
 /*Map Stylus*/	
 //@import "../js/components/tools/toolsStyle.styl"
-
-
