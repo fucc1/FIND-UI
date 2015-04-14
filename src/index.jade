@@ -70,45 +70,67 @@ html(lang='en')
     .container
       // Main component for a primary marketing message or call to action
       
-      .jumbotron.bg-light
+      .row.jumbotron.bg-light
         h1 Explore Indicators, Effortlessly
         p
           | Come for the Indicator, stay for the data. Modify and enhance the data how you want.
-        p.form-group
-          input.main-search(type='text' placeHolder='Search for your desired indicator')
-          span.glyphicon.glyphicon-search.form-control-feedback         
+        .row
+          .col-md-2
+          .col-md-8
+            p.search-group
+              div.form-group.has-feedback
+                input.main-search(type='text' placeHolder='Search for your desired indicator')
+                span.glyphicon.glyphicon-search.form-control-feedback
+          //i.fa.fa-search
+          //span.glyphicon.glyphicon-search.form-control-feedback
+          .col-md-2
+                 
         p
           | Examples: 
-          a Nutrition, 
-          a Popular Growth, 
+          a Nutrition
+          | , 
+          a Popular Growth
+          | , 
           span or 
           a Angola
           //a.btn.btn-lg.btn-primary(href='../../components/#navbar', role='button') View navbar docs &raquo;
       
       .row
-        .col-md-8
+        .col-md-6
           div.well.bg-container
             h3 Welcome to FIND
-            p
-            | Explore country-level indicators from a variety of sources and sectors. Visualize and compare the data to better understand the context. Share what you discover.
-            | Explore country-level indicators from a variety of sources and sectors. Visualize and compare the data to better understand the context. Share what you discover.
-            | Explore country-level indicators from a variety of sources and sectors. Visualize and compare the data to better understand the context. Share what you discover.
-            | Explore country-level indicators from a variety of sources and sectors. Visualize and compare the data to better understand the context. Share what you discover.
-            | Explore country-level indicators from a variety of sources and sectors. Visualize and compare the data to better understand the context. Share what you discover.
-            | Explore country-level indicators from a variety of sources and sectors. Visualize and compare the data to better understand the context. Share what you discover.
-            br
-            br
-        .col-md-4
+            .row
+              .col-md-3
+                  img(src='http://placehold.it/125x125')
+              .col-md-9
+                p
+                | Explore country-level indicators from a variety of sources and sectors. Visualize and compare the data to better understand the context. Share what you discover.
+                | Explore country-level indicators from a variety of sources and sectors. Visualize and compare the data to better understand the context. Share what you discover.
+                | Explore country-level indicators from a variety of sources and sectors. Visualize and compare the data to better understand the context. Share what you discover.
+                | Explore country-level indicators from a variety of sources and sectors. Visualize and compare the data to better understand the context. Share what you discover.
+                | Explore country-level indicators from a variety of sources and sectors. Visualize and compare the data to better understand the context. Share what you discover.
+                | Explore country-level indicators from a variety of sources and sectors. Visualize and compare the data to better understand the context. Share what you discover.
+                br
+                br
+        .col-md-6
           .row
             .col-md-12
               div.well.bg-container
                 h3 Literacy rates
-                p Literacy rates are up 33 percent worldwide in the last 25 years, and primary school enrollment has tripled in that period.
+                .row
+                  .col-md-3
+                    img(src='http://placehold.it/125x125')
+                  .col-md-9
+                    p Literacy rates are up 33 percent worldwide in the last 25 years, and primary school enrollment has tripled in that period.
           .row
             .col-md-12
               div.well.bg-container
                 h3 Infant and Child Death Rates
-                p In the past 50 years, infant and child death rates in the developing world have been reduced by 50 percent, and health conditions around the world have improved more during this period than in all previous human history.
+                .row
+                  .col-md-3
+                    img(src='http://placehold.it/125x125')
+                  .col-md-9
+                    p In the past 50 years, infant and child death rates in the developing world have been reduced by 50 percent, and health conditions around the world have improved more during this period than in all previous human history.
 
       .row.bg-medium.footer
         .well.bg-medium.font-light
@@ -117,33 +139,81 @@ html(lang='en')
             div.well.bg-container
               h3 Latest Updates
               .row
-                .col-sm-12
+                .col-md-3
+                  img(src='http://placehold.it/76x76')
+                .col-md-9
                   p Synergizes communities. Visualize and compare the data to better understand the context. Share what you discover.
               .row
-                .col-sm-12
+                .col-md-3
+                  img(src='http://placehold.it/76x76')
+                .col-md-9
                   p Synergizes communities. Visualize and compare the data to better understand the context. Share what you discover.
               .row
-                .col-sm-12
+                .col-md-3
+                  img(src='http://placehold.it/76x76')
+                .col-md-9
                   p Synergizes communities. Visualize and compare the data to better understand the context. Share what you discover.
-          .col-sm-8.font-dark
+              .row
+                .col-md-3
+                  img(src='http://placehold.it/76x76')
+                .col-md-9
+                  p Synergizes communities. Visualize and compare the data to better understand the context. Share what you discover.
+          .col-md-8.font-dark
             .row
-              .col-sm-6
+              .col-md-6
                 div.well.bg-container
                   h3 Scatter plots
-                  p Literacy rates are up 33 percent worldwide in the last 25 years, and primary school enrollment has tripled in that period.
-              .col-sm-6
+                  .row
+                    .col-md-6
+                      img(src='http://placehold.it/150x150')
+                    .col-md-6
+                      p Literacy rates are up 33 percent worldwide in the last 25 years, and primary school enrollment has tripled in that period.
+              .col-md-6
                 div.well.bg-container
                   h3 Line Chart, Series
-                  p In the past 50 years, infant and child death rates in the developing world have been reduced by 50 percent, and health conditions around the world have improved more during this period than in all previous human history.
+                  .row
+                    .col-md-6
+                      img(src='http://placehold.it/150x150')
+                    .col-md-6
+                      p In the past 50 years, infant and child death rates in the developing world have been reduced by 50 percent, and health.
             .row
-              .col-sm-6
+              .col-md-6
                 div.well.bg-container
                   h3 Line Charts
-                  p Literacy rates are up 33 percent worldwide in the last 25 years, and primary school enrollment has tripled in that period.
-              .col-sm-6
+                  .row
+                    .col-md-6
+                      img(src='http://placehold.it/150x150')
+                    .col-md-6
+                      p Literacy rates are up 33 percent worldwide in the last 25 years, and primary school enrollment has tripled in that period.
+              .col-md-6
                 div.well.bg-container
                   h3 Maps
-                  p In the past 50 years, infant and child death rates in the developing world have been reduced by 50 percent, and health conditions around the world have improved more during this period than in all previous human history.
+                  .row
+                    .col-md-6
+                      img(src='http://placehold.it/150x150')
+                    .col-md-6
+                      p In the past 50 years, infant and child death rates in the developing world have been reduced by 50 percent, and health.
+      .row.bg-dark.font-light.footer-links
+        .well.bg-dark
+          .col-md-5
+            | &copy; 2015 All Rights Reserved
+          .col-md-7
+            ul.nav.nav-pills
+              li
+                a(href="#") Home
+              li
+                a(href="#") About
+              li
+                a(href="#") Privacy Policy
+              li
+                a(href="#") Accessibility
+              li
+                a(href="#") Contact Us
+              li
+                a(href="#") Help            
+              i.fa.fa-chevron-up
+
+
     // /container
     //
       Bootstrap core JavaScript
