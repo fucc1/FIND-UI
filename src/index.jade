@@ -71,28 +71,27 @@ html(lang='en')
       // Main component for a primary marketing message or call to action
       
       .row.jumbotron.bg-light
+        p &nbsp;
         h1 Explore Indicators, Effortlessly
-        p
-          | Come for the Indicator, stay for the data. Modify and enhance the data how you want.
+        //-p
+          //-| Come for the Indicator, stay for the data. Modify and enhance the data how you want.
         .row
           .col-md-2
           .col-md-8
             p.search-group
               div.form-group.has-feedback
-                input.main-search(type='text' placeHolder='Search for your desired indicator')
+                input.main-search(type='text' placeHolder='Find a country or indicator')
                 span.glyphicon.glyphicon-search.form-control-feedback
           //i.fa.fa-search
           //span.glyphicon.glyphicon-search.form-control-feedback
           .col-md-2
                  
         p
-          | Examples: 
-          a Nutrition
-          | , 
-          a Popular Growth
+          | Or browse by: 
+          a Country
           | , 
           span or 
-          a Angola
+          a Indicator
           //a.btn.btn-lg.btn-primary(href='../../components/#navbar', role='button') View navbar docs &raquo;
       
       .row
