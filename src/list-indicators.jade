@@ -1,0 +1,80 @@
+doctype html
+html(lang='en')
+  include ./includes/head.jade
+  body.app
+    include ./includes/navigation.jade
+    .container
+      // Main component for a primary marketing message or call to action
+      .row
+        div.btn-group.btn-group-justified(role="group" aria-label="...")
+          div.btn-group(role="group")
+            button.btn.btn-default(type="button") Categories
+          div.btn-group(role="group")
+            button.btn.btn-default(type="button") Countries
+
+      .row.jumbotron.bg-none
+        .row
+          .col-md-3
+            div.well()
+              span.well.glyphicon.glyphicon-education()
+              h4 Peach and Security
+          .col-md-3
+            div.well()
+              span.well.glyphicon.glyphicon-education()
+              h4 Democracy, Human Rights, and Governance
+          .col-md-3
+            div.well()
+              span.well.glyphicon.glyphicon-education()
+              h4 Health
+          .col-md-3
+            div.well()
+              span.well.glyphicon.glyphicon-education()
+              h4 Education
+        .row
+          .col-md-3
+            div.well()
+              span.well.glyphicon.glyphicon-education()
+              h4 Economic Growth
+          .col-md-3
+            div.well()
+              span.well.glyphicon.glyphicon-education()
+              h4 Human Assistance
+          .col-md-3
+            div.well()
+              span.well.glyphicon.glyphicon-education()
+              h4 Cross Sectoral
+          .col-md-3
+            div.well()
+              span.well.glyphicon.glyphicon-education()
+              h4 All Categories
+      .row.bg-medium.footer
+        .well.bg-medium.font-light
+          h1 Start with a chart style and add your indicator          
+          .col-md-12.font-dark
+            .row
+              .col-md-4
+                div.well.bg-container
+                  h3 Scatter plots
+                  .row
+                    .col-md-6
+                      img(src='app/images/chart_scatter.png')
+                    .col-md-6
+                      p Literacy rates are up 33 percent worldwide in the last 25 years, and primary school enrollment has tripled in that period.
+              .col-md-4
+                div.well.bg-container
+                  h3 Line Chart, Series
+                  .row
+                    .col-md-6
+                      img(src='app/images/chart_pie.png')
+                    .col-md-6
+                      p In the past 50 years, infant and child death rates in the developing world have been reduced by 50 percent, and health.
+              .col-md-4
+                div.well.bg-container
+                  h3 Curve Charts
+                  .row
+                    .col-md-6
+                      img(src='app/images/chart_curved.png')
+                    .col-md-6
+                      p Literacy rates are up 33 percent worldwide in the last 25 years, and primary school enrollment has tripled in that period.
+                        
+      include ./includes/footer.jade

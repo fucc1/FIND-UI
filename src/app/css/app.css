@@ -33,6 +33,9 @@ body {
 .app .navbar-collapse.collapse {
   height: 60px !important;
 }
+.app .bg-none {
+  background: none;
+}
 .app .bg-light {
   background-color: rgba(138,127,187,0.8);
 }
@@ -52,6 +55,11 @@ body {
   border-radius: 0px;
   border: none;
   box-shadow: none;
+}
+.app .well .glyphicon {
+  width: 100%;
+  text-align: center;
+  font-size: 40px;
 }
 .app img {
   width: 100%;
