@@ -1,5 +1,35 @@
-.app .noun_solidarity_10156 {
-  background: url("../images/noun_solidarity_10156.png") center center no-repeat;
+.app .icon-category-70:after {
+  content: '\e608';
+}
+.app .icon-category-10:after {
+  content: '\e60d';
+}
+.app .icon-category-20:after {
+  content: '\e606';
+}
+.app .icon-category-50:after {
+  content: '\e602';
+}
+.app .icon-category-40:after {
+  content: '\e603';
+}
+.app .icon-category-30:after {
+  content: '\e607';
+}
+.app .icon-category-90:after {
+  content: '\e600';
+}
+.app .icon-category-60:after {
+  content: '\e604';
+}
+.app .icon-category-80:after {
+  content: '\e605';
+}
+.app [class^="icon-"],
+.app [class*=" icon-"] {
+  font-family: $familyF;
+  font-size: 66px;
+  text-align: center;
 }
 .app .noun_vote_29586 {
   background: url("../images/noun_vote_29586.png") center center no-repeat;
