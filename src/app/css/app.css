@@ -132,14 +132,109 @@ body {
   margin-right: 20px;
   padding-right: 20px;
 }
+.app .btn-default {
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  border-radius: 0px;
+  color: #5447a2;
+  font-size: 28px;
+  font-weight: 400;
+}
+.app .btn-group:nth-child(2) {
+  border-left: 1px solid #ccc;
+}
 /****** MEDIA QUERIES ************/
 @media (min-width: 768px) {
   .app .jumbotron {
     padding: 10px;
   }
-  .navbar-nav > li >a {
+  .navbar-nav > li > a {
     padding: 20px;
   }
+}
+/*categories*/
+.app .noun_solidarity_10156 {
+  background: url("../images/noun_solidarity_10156.png") center center no-repeat;
+}
+.app .noun_vote_29586 {
+  background: url("../images/noun_vote_29586.png") center center no-repeat;
+}
+.app .noun_community-health-advocate_3746 {
+  background: url("../images/noun_community-health-advocate_3746.png") center center no-repeat;
+}
+.app .noun_education_79148 {
+  background: url("../images/noun_education_79148.png") center center no-repeat;
+}
+.app .noun_economic-growth_28093 {
+  background: url("../images/noun_economic-growth_28093.png") center center no-repeat;
+}
+.app .noun_help_28806 {
+  background: url("../images/noun_help_28806.png") center center no-repeat;
+}
+.app .noun_group_28631 {
+  background: url("../images/noun_group_28631.png") center center no-repeat;
+}
+.app .noun_globe_76672 {
+  background: url("../images/noun_globe_76672.png") center center no-repeat;
+}
+.well h4 {
+  text-align: center;
+}
+.app .category {
+  height: 100px;
+  background-size: contain;
+}
+.app .category-wrapper {
+  border-radius: 15px;
+  border: 1px solid #d8d8d8;
+}
+.app .afghanistan {
+  background: url("http://www.sciencekids.co.nz/images/pictures/flags96/Afghanistan.jpg") center center no-repeat;
+}
+.app .albania {
+  background: url("http://www.sciencekids.co.nz/images/pictures/flags96/Albania.jpg") center center no-repeat;
+}
+.app .algeria {
+  background: url("http://www.sciencekids.co.nz/images/pictures/flags96/Algeria.jpg") center center no-repeat;
+}
+.app .andorra {
+  background: url("http://www.sciencekids.co.nz/images/pictures/flags96/Andorra.jpg") center center no-repeat;
+}
+.app .angola {
+  background: url("http://www.sciencekids.co.nz/images/pictures/flags96/Angola.jpg") center center no-repeat;
+}
+.app .antigua {
+  background: url("http://www.sciencekids.co.nz/images/pictures/flags96/Antigua_and_Barbuda.jpg") center center no-repeat;
+}
+.app .argentina {
+  background: url("http://www.sciencekids.co.nz/images/pictures/flags96/Argentina.jpg") center center no-repeat;
+}
+.app .armenia {
+  background: url("http://www.sciencekids.co.nz/images/pictures/flags96/Armenia.jpg") center center no-repeat;
+}
+.app .australia {
+  background: url("http://www.sciencekids.co.nz/images/pictures/flags96/Australia.jpg") center center no-repeat;
+}
+.app .austria {
+  background: url("http://www.sciencekids.co.nz/images/pictures/flags96/Austria.jpg") center center no-repeat;
+}
+.app .azerbaijan {
+  background: url("http://www.sciencekids.co.nz/images/pictures/flags96/Azerbaijan.jpg") center center no-repeat;
+}
+.app .bahamas {
+  background: url("http://www.sciencekids.co.nz/images/pictures/flags96/Bahamas.jpg") center center no-repeat;
+}
+.well h4 {
+  text-align: center;
+}
+.app .category {
+  height: 100px;
+  background-size: contain;
+}
+.app .category-wrapper {
+  border-radius: 15px;
+  border: 1px solid #d8d8d8;
 }
 /*App Stylus*/
 /*Header Stylus*/

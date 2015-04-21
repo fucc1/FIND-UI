@@ -1,0 +1,35 @@
+.app .noun_solidarity_10156 {
+  background: url("../images/noun_solidarity_10156.png") center center no-repeat;
+}
+.app .noun_vote_29586 {
+  background: url("../images/noun_vote_29586.png") center center no-repeat;
+}
+.app .noun_community-health-advocate_3746 {
+  background: url("../images/noun_community-health-advocate_3746.png") center center no-repeat;
+}
+.app .noun_education_79148 {
+  background: url("../images/noun_education_79148.png") center center no-repeat;
+}
+.app .noun_economic-growth_28093 {
+  background: url("../images/noun_economic-growth_28093.png") center center no-repeat;
+}
+.app .noun_help_28806 {
+  background: url("../images/noun_help_28806.png") center center no-repeat;
+}
+.app .noun_group_28631 {
+  background: url("../images/noun_group_28631.png") center center no-repeat;
+}
+.app .noun_globe_76672 {
+  background: url("../images/noun_globe_76672.png") center center no-repeat;
+}
+.well h4 {
+  text-align: center;
+}
+.app .category {
+  height: 100px;
+  background-size: contain;
+}
+.app .category-wrapper {
+  border-radius: $radius15;
+  border: 1px solid $bgContainer;
+}

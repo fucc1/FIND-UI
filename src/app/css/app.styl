@@ -163,6 +163,20 @@ html, body
 		margin-right 20px
 		padding-right 20px
 		
+.app .btn-default
+	border-top none
+	border-left none
+	border-right none
+	border-radius $radius0
+	color $bgMedium
+	font-size 28px
+	font-weight $weightMedium
+	
+.app .btn-group:nth-child(2)
+	border-left 1px solid #ccc
+	
+
+		
 /****** MEDIA QUERIES ************/
 	
 
@@ -171,8 +185,12 @@ html, body
 	.app .jumbotron
 		padding 10px
 		
-	.navbar-nav > li >a
+	.navbar-nav > li > a
 		padding 20px
+		
+/*categories*/
+@import "categories.styl"
+@import "countries.styl"
 
 /*App Stylus*/	
 //@import "../js/components/app/appStyle.styl"
