@@ -1,9 +1,6 @@
 doctype html
 html(lang='en')
-  include ./includes/head.jade
-  script(src='http://code.highcharts.com/highcharts.js')
-  script(src='http://code.highcharts.com/modules/exporting.js')
-  script(src='bower_components/knockout/dist/knockout.js')
+  include ./includes/head.jade  
   link(href='app/css/vizualization.css', rel='stylesheet')
   body.app
     include ./includes/navigation.jade
@@ -20,12 +17,14 @@ html(lang='en')
                   a(href='#by-category', aria-controls='by-category', role='tab', data-toggle='tab')
                     h4
                       span(data-bind="visible:!selectionTracker().indicator") 1. Select Indicator
-                      span(data-bind="html:activeIndicator,visible:selectionTracker().indicator")
+                      span.selected-tab-value(data-bind="html:activeIndicator,visible:selectionTracker().indicator")
+                      span.glyphicon.glyphicon-remove(data-bind="click:clearIndicator,visible:selectionTracker().indicator")
                 li(role='presentation')
                   a(href='#select-vizualization', aria-controls='select-vizualization', role='tab', data-toggle='tab')
-                    h4 2.
-                      span() &nbsp; Choose Vizualization
-                li(role='presentation')
+                    h4
+                      span(data-bind="visible:!selectionTracker().vizualization") 2. Choose Vizualization
+                      span.selected-tab-value(data-bind="html:activeChart,visible:selectionTracker().vizualization")
+                li.disabled(role='presentation')
                   a(href='#vizualize', aria-controls='vizualize', role='tab', data-toggle='tab')
                     h4 3.
                       span() &nbsp; Vizualize
@@ -377,12 +376,38 @@ html(lang='en')
                 #select-vizualization.tab-pane(role='tabpanel')
                   .row
                     .col-sm-4.col-md-4
-                      | vis 1
+                      div.well.category-wrapper(data-bind='click:function(){selectVizualization("Pie Chart")}')
+                        div.well.category.noun-pie-15345()
+                        h4 Pie Chart
                     .col-sm-4.col-md-4
-                      | vis 2
+                      div.well.category-wrapper(data-bind='click:function(){selectVizualization("Scatter Plot")}' )
+                        div.well.category.noun-scatter-105477()
+                        h4 Scatter
+                    .col-sm-4.col-md-4
+                      div.well.category-wrapper(data-bind='click:function(){selectVizualization("Line Chart")}')
+                        div.well.category.noun-line-105490()
+                        h4 Line
                 #vizualize.tab-pane(role='tabpanel')
+                  .row
+                    .col-md-2                      
+                      div.ui-widget
+                        label(for="years-label") Years
+                        input#years-label(readonly)
+                      div#slider-years
+                      div.ui-widget
+                        label(for="regions") Regions
+                        input#regions
+                    .col-md-10
+                      div#viz-container
+  
                         
       include ./includes/footer.jade
+link(href='//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css', rel='stylesheet')
+script(src='bower_components/jquery-ui/jquery-ui.js')
+script(src='//code.highcharts.com/highcharts.js')
+script(src='//code.highcharts.com/modules/exporting.js')
+script(src='bower_components/knockout/dist/knockout.js')
 script(src='app/js/lib/jquery.bootstrap.wizard.min.js')
 script(src='app/js/vizualization.js')
+script(src='app/js/loader.js')
 script(src='app/js/lib/prettify.js')

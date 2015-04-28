@@ -158,9 +158,6 @@ body {
   background-image: -webkit-linear-gradient(top, rgba(138,127,187,0.8), #1c1837);
   border: 1px solid #1c1837;
 }
-.app .shadow {
-  box-shadow: 10px 10px 5px #888;
-}
 /****** MEDIA QUERIES ************/
 @media (min-width: 768px) {
   .app .jumbotron {

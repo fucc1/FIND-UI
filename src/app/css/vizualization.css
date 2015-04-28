@@ -3,16 +3,8 @@
   -ms-perspective: 800;
   -moz-perspective: 800;
   -o-perspective: 800;
-   /*width: 400px;*/
-   min-height: 225px;
-   position: relative;
-}
-.flip .card.flipped {
-  transform:rotatey(-180deg);
-  -ms-transform:rotatey(-180deg); /* IE 9 */
-  -moz-transform:rotatey(-180deg); /* Firefox */
-  -webkit-transform:rotatey(-180deg); /* Safari and Chrome */
-  -o-transform:rotatey(-180deg); /* Opera */
+  min-height: 225px;
+  position: relative;
 }
 .flip .card {
   width: 100%;
@@ -30,17 +22,23 @@
   -webkit-transition: 0.5s;
   transition: 0.5s;
 }
+.flip .card.flipped {
+  transform: rotatey(-180deg);
+  -ms-transform: rotatey(-180deg);
+  -moz-transform: rotatey(-180deg);
+  -webkit-transform: rotatey(-180deg);
+  -o-transform: rotatey(-180deg);
+}
 .flip .card .face {
   width: 100%;
   height: 100%;
   position: absolute;
-  z-index: 2;  
-  backface-visibility: hidden;  /* W3C */
-  -webkit-backface-visibility: hidden; /* Safari & Chrome */
-  -moz-backface-visibility: hidden; /* Firefox */
-  -ms-backface-visibility: hidden; /* Internet Explorer */
-  -o-backface-visibility: hidden; /* Opera */
-
+  z-index: 2;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  -moz-backface-visibility: hidden;
+  -ms-backface-visibility: hidden;
+  -o-backface-visibility: hidden;
 }
 .flip .card .front {
   position: absolute;
@@ -48,24 +46,49 @@
   cursor: pointer;
 }
 .flip .card .back {
-    color: black;
-    cursor: pointer;
-    
-  transform:rotatey(-180deg);
-  -ms-transform:rotatey(-180deg); /* IE 9 */
-  -moz-transform:rotatey(-180deg); /* Firefox */
-  -webkit-transform:rotatey(-180deg); /* Safari and Chrome */
-  -o-transform:rotatey(-180deg); /* Opera */
-
+  color: #000;
+  cursor: pointer;
+  transform: rotatey(-180deg);
+  -ms-transform: rotatey(-180deg);
+  -moz-transform: rotatey(-180deg);
+  -webkit-transform: rotatey(-180deg);
+  -o-transform: rotatey(-180deg);
 }
-
-
-.app .face .list-group {
-
-  display: none
-}
-
 .app .face .list-group.show-me {
-
-  display: block
+  display: block;
+}
+.app #viz-container {
+  min-width: 310px;
+  height: 400px;
+}
+.app .selected-tab-value {
+  color: #008000;
+}
+.app .category.noun-pie-15345 {
+  background: url("../images/noun_pie_15345.png") center center no-repeat;
+  background-size: contain;
+}
+.app .category.noun-scatter-105477 {
+  background: url("../images/noun_scatter_105477.png") center center no-repeat;
+  background-size: contain;
+}
+.app .category.noun-line-105490 {
+  background: url("../images/noun_line_105490.png") center center no-repeat;
+  background-size: contain;
+}
+.app .category-wrapper {
+  cursor: pointer;
+}
+.app .flip .category-wrapper {
+  -webkit-transition: 0.5s all;
+  transition: 0.5s all;
+}
+.app .flip .category-wrapper:hover {
+  box-shadow: 0 5px 10px rgba(0,0,0,0.2);
+  -webkit-transform: scale(1.01);
+  transform: scale(1.01);
+}
+.app .shadow {
+  box-shadow: 0 5px 10px rgba(0,0,0,0.2);
+  border-radius: $radius5;
 }

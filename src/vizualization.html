@@ -25,9 +25,6 @@
     -->
     <link href="//fonts.googleapis.com/css?family=Roboto:500,300,400&amp;subset=cyrillic,cyrillic-ext,latin,greek" rel="stylesheet">
   </head>
-  <script src="http://code.highcharts.com/highcharts.js"></script>
-  <script src="http://code.highcharts.com/modules/exporting.js"></script>
-  <script src="bower_components/knockout/dist/knockout.js"></script>
   <link href="app/css/vizualization.css" rel="stylesheet">
   <body class="app">
     <!-- Fixed navbar-->
@@ -60,10 +57,10 @@
           <div role="tabpanel">
             <ul id="vizTabs" role="tablist" class="nav nav-tabs nav-justified">                                
               <li role="presentation" class="active dropdown"><a href="#by-category" aria-controls="by-category" role="tab" data-toggle="tab">
-                  <h4><span data-bind="visible:!selectionTracker().indicator">1. Select Indicator</span><span data-bind="html:activeIndicator,visible:selectionTracker().indicator"></span></h4></a></li>
+                  <h4><span data-bind="visible:!selectionTracker().indicator">1. Select Indicator</span><span data-bind="html:activeIndicator,visible:selectionTracker().indicator" class="selected-tab-value"></span><span data-bind="click:clearIndicator,visible:selectionTracker().indicator" class="glyphicon glyphicon-remove"></span></h4></a></li>
               <li role="presentation"><a href="#select-vizualization" aria-controls="select-vizualization" role="tab" data-toggle="tab">
-                  <h4>2.<span>&nbsp; Choose Vizualization</span></h4></a></li>
-              <li role="presentation"><a href="#vizualize" aria-controls="vizualize" role="tab" data-toggle="tab">
+                  <h4><span data-bind="visible:!selectionTracker().vizualization">2. Choose Vizualization</span><span data-bind="html:activeChart,visible:selectionTracker().vizualization" class="selected-tab-value"></span></h4></a></li>
+              <li role="presentation" class="disabled"><a href="#vizualize" aria-controls="vizualize" role="tab" data-toggle="tab">
                   <h4>3.<span>&nbsp; Vizualize</span></h4></a></li>
             </ul>
             <div class="tab-content">
@@ -376,11 +373,44 @@
               </div>
               <div id="select-vizualization" role="tabpanel" class="tab-pane">
                 <div class="row">
-                  <div class="col-sm-4 col-md-4">vis 1</div>
-                  <div class="col-sm-4 col-md-4">vis 2</div>
+                  <div class="col-sm-4 col-md-4">
+                    <div data-bind="click:function(){selectVizualization(&quot;Pie Chart&quot;)}" class="well category-wrapper">
+                      <div class="well category noun-pie-15345"></div>
+                      <h4>Pie Chart</h4>
+                    </div>
+                  </div>
+                  <div class="col-sm-4 col-md-4">
+                    <div data-bind="click:function(){selectVizualization(&quot;Scatter Plot&quot;)}" class="well category-wrapper">
+                      <div class="well category noun-scatter-105477"></div>
+                      <h4>Scatter</h4>
+                    </div>
+                  </div>
+                  <div class="col-sm-4 col-md-4">
+                    <div data-bind="click:function(){selectVizualization(&quot;Line Chart&quot;)}" class="well category-wrapper">
+                      <div class="well category noun-line-105490"></div>
+                      <h4>Line</h4>
+                    </div>
+                  </div>
                 </div>
               </div>
-              <div id="vizualize" role="tabpanel" class="tab-pane"></div>
+              <div id="vizualize" role="tabpanel" class="tab-pane">
+                <div class="row">
+                  <div class="col-md-2">                     
+                    <div class="ui-widget">
+                      <label for="years-label">Years</label>
+                      <input id="years-label" readonly>
+                    </div>
+                    <div id="slider-years"></div>
+                    <div class="ui-widget">
+                      <label for="regions">Regions</label>
+                      <input id="regions">
+                    </div>
+                  </div>
+                  <div class="col-md-10">
+                    <div id="viz-container"></div>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -413,6 +443,12 @@
     </div>
   </body>
 </html>
+<link href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css" rel="stylesheet">
+<script src="bower_components/jquery-ui/jquery-ui.js"></script>
+<script src="//code.highcharts.com/highcharts.js"></script>
+<script src="//code.highcharts.com/modules/exporting.js"></script>
+<script src="bower_components/knockout/dist/knockout.js"></script>
 <script src="app/js/lib/jquery.bootstrap.wizard.min.js"></script>
 <script src="app/js/vizualization.js"></script>
+<script src="app/js/loader.js"></script>
 <script src="app/js/lib/prettify.js"></script>
