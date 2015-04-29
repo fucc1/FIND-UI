@@ -1,3 +1,6 @@
+/*Variables Stylus*/  
+@import "variables.styl"
+
 .flip
   -webkit-perspective 800
   -ms-perspective 800
@@ -68,7 +71,7 @@
     height 400px
   
   .selected-tab-value
-    color green
+    color $colorDark
   
   .category
     &.noun-pie-15345
@@ -93,9 +96,31 @@
         box-shadow 0 5px 10px rgba(0,0,0,.2)
         transform scale(1.01)
         
+  .panel-group
+    margin-bottom 0
+    
+    .list-group-item
+      padding-left 30px
+      
+    .panel
+      border none
+    
+  .list-group-item
+    border none
+
+        
 .app .shadow
   box-shadow 0 5px 10px rgba(0,0,0,.2)
   border-radius $radius5
   
-      
-    
+.app .glyphicon-circle-arrow-right
+  display none
+  
+.app .glyphicon-circle-arrow-down
+  display block
+
+.app .collapsed .glyphicon-circle-arrow-right
+  display block
+  
+.app .collapsed .glyphicon-circle-arrow-down
+  display none

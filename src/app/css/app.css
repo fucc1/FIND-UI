@@ -15,10 +15,10 @@ body {
   color: #ccc95c;
 }
 .app .navbar-default {
-  background-color: #5447a2;
+  background-color: #1a398c;
 }
 .app .navbar-default .navbar-nav > .active > a {
-  background-color: #1c1837;
+  background-color: #152c70;
 }
 .app .navbar-default .navbar-nav > .active > a,
 .app .navbar-default .navbar-nav > li > a {
@@ -44,19 +44,19 @@ body {
   background: none;
 }
 .app .bg-light {
-  background-color: rgba(138,127,187,0.8);
+  background-color: #5c74b4;
 }
 .app .bg-dark {
-  background-color: #1c1837;
+  background-color: #152c70;
 }
 .app .bg-medium {
-  background-color: #5447a2;
+  background-color: #1a398c;
 }
 .app .font-light {
   color: #fff;
 }
 .app .font-dark {
-  color: #000;
+  color: #852224;
 }
 .app .well {
   border-radius: 0px;
@@ -74,7 +74,7 @@ body {
   max-width: 150px;
 }
 .app .bg-container {
-  background-color: #d8d8d8;
+  background-color: #d5878a;
 }
 .app .map-bg {
   background: url("../images/map.png") center center no-repeat;
@@ -97,7 +97,7 @@ body {
   text-align: center;
 }
 .app .jumbotron .search-group {
-  color: #000;
+  color: #852224;
 }
 .app .jumbotron .form-control-feedback {
   width: 60px;
@@ -144,7 +144,7 @@ body {
   border-left: none;
   border-right: none;
   border-radius: 0px;
-  color: #5447a2;
+  color: #1a398c;
   font-size: 28px;
   font-weight: 400;
 }
@@ -155,8 +155,8 @@ body {
   position: absolute;
   top: -5px;
   right: 5px;
-  background-image: -webkit-linear-gradient(top, rgba(138,127,187,0.8), #1c1837);
-  border: 1px solid #1c1837;
+  background-image: -webkit-linear-gradient(top, #5c74b4, #152c70);
+  border: 1px solid #152c70;
 }
 /****** MEDIA QUERIES ************/
 @media (min-width: 768px) {
@@ -231,7 +231,7 @@ body {
 }
 .app .category-wrapper {
   border-radius: 15px;
-  border: 1px solid #d8d8d8;
+  border: 1px solid #d5878a;
 }
 .app .afghanistan {
   background: url("http://www.sciencekids.co.nz/images/pictures/flags96/Afghanistan.jpg") center center no-repeat;
@@ -278,7 +278,7 @@ body {
 }
 .app .category-wrapper {
   border-radius: 15px;
-  border: 1px solid #d8d8d8;
+  border: 1px solid #d5878a;
 }
 /*App Stylus*/
 /*Header Stylus*/

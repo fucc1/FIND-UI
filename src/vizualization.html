@@ -59,7 +59,7 @@
               <li role="presentation" class="active dropdown"><a href="#by-category" aria-controls="by-category" role="tab" data-toggle="tab">
                   <h4><span data-bind="visible:!selectionTracker().indicator">1. Select Indicator</span><span data-bind="html:activeIndicator,visible:selectionTracker().indicator" class="selected-tab-value"></span><span data-bind="click:clearIndicator,visible:selectionTracker().indicator" class="glyphicon glyphicon-remove"></span></h4></a></li>
               <li role="presentation"><a href="#select-vizualization" aria-controls="select-vizualization" role="tab" data-toggle="tab">
-                  <h4><span data-bind="visible:!selectionTracker().vizualization">2. Choose Vizualization</span><span data-bind="html:activeChart,visible:selectionTracker().vizualization" class="selected-tab-value"></span></h4></a></li>
+                  <h4><span data-bind="visible:!selectionTracker().vizualization">2. Choose Vizualization</span><span data-bind="html:activeChart,visible:selectionTracker().vizualization" class="selected-tab-value"></span><span data-bind="click:clearChart,visible:selectionTracker().vizualization" class="glyphicon glyphicon-remove"></span></h4></a></li>
               <li role="presentation" class="disabled"><a href="#vizualize" aria-controls="vizualize" role="tab" data-toggle="tab">
                   <h4>3.<span>&nbsp; Vizualize</span></h4></a></li>
             </ul>
@@ -97,7 +97,22 @@
                         </div>
                       </div>
                       <div class="face back">
-                        <div class="list-group"><a href="#" class="list-group-item active">Human Assistance</a><a href="#" data-bind="click:selectIndicator" data-content="MCP" title="Source" class="list-group-item">Protection, Assistance and Solutions</a><a href="#" data-bind="click:selectIndicator" data-content="World Bank" title="Source" class="list-group-item">Disaster Readiness</a><a href="#" data-bind="click:selectIndicator" data-content="aha aja a" title="Source" class="list-group-item">Migration Management</a></div>
+                        <div class="list-group"><a href="#" class="list-group-item active">Human Assistance</a>
+                          <div role="tablist" class="panel-group">
+                            <div class="panel panel-default">
+                              <div data-bind="click:expandCategory" role="tab" data-toggle="collapse" href="#collapseListGroup1" aria-expanded="false" class="panel-heading">
+                                <h4 class="panel-title"><a>Sub Catergory</a><span class="pull-right glyphicon glyphicon-circle-arrow-right"></span><span class="pull-right glyphicon glyphicon-circle-arrow-down"></span></h4>
+                              </div>
+                              <div id="collapseListGroup1" role="tabpanel" aria-expanded="false" class="panel-collapse collapse">
+                                <ul class="list-group">
+                                  <li class="list-group-item"><a href="#" data-bind="click:selectIndicator" data-content="MCP" title="Source">Indicator 1</a></li>          
+                                  <li class="list-group-item"><a href="#" data-bind="click:selectIndicator" data-content="MCP" title="Source">Indicator B</a></li>          
+                                  <li class="list-group-item"><a href="#" data-bind="click:selectIndicator" data-content="MCP" title="Source">Indicator III</a></li>
+                                </ul>
+                              </div>
+                            </div>
+                          </div><a href="#" data-bind="click:selectIndicator" data-content="MCP" title="Source" class="list-group-item">Protection, Assistance and Solutions</a><a href="#" data-bind="click:selectIndicator" data-content="World Bank" title="Source" class="list-group-item">Disaster Readiness</a><a href="#" data-bind="click:selectIndicator" data-content="test abcdef" title="Source" class="list-group-item">Migration Management</a>
+                        </div>
                       </div>
                     </div>
                   </div>

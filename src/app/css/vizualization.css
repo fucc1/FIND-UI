@@ -1,3 +1,4 @@
+/*Variables Stylus*/
 .flip {
   -webkit-perspective: 800;
   -ms-perspective: 800;
@@ -62,7 +63,7 @@
   height: 400px;
 }
 .app .selected-tab-value {
-  color: #008000;
+  color: #852224;
 }
 .app .category.noun-pie-15345 {
   background: url("../images/noun_pie_15345.png") center center no-repeat;
@@ -88,7 +89,31 @@
   -webkit-transform: scale(1.01);
   transform: scale(1.01);
 }
+.app .panel-group {
+  margin-bottom: 0;
+}
+.app .panel-group .list-group-item {
+  padding-left: 30px;
+}
+.app .panel-group .panel {
+  border: none;
+}
+.app .list-group-item {
+  border: none;
+}
 .app .shadow {
   box-shadow: 0 5px 10px rgba(0,0,0,0.2);
-  border-radius: $radius5;
+  border-radius: 5px;
+}
+.app .glyphicon-circle-arrow-right {
+  display: none;
+}
+.app .glyphicon-circle-arrow-down {
+  display: block;
+}
+.app .collapsed .glyphicon-circle-arrow-right {
+  display: block;
+}
+.app .collapsed .glyphicon-circle-arrow-down {
+  display: none;
 }

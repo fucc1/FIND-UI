@@ -24,6 +24,7 @@ html(lang='en')
                     h4
                       span(data-bind="visible:!selectionTracker().vizualization") 2. Choose Vizualization
                       span.selected-tab-value(data-bind="html:activeChart,visible:selectionTracker().vizualization")
+                      span.glyphicon.glyphicon-remove(data-bind="click:clearChart,visible:selectionTracker().vizualization")
                 li.disabled(role='presentation')
                   a(href='#vizualize', aria-controls='vizualize', role='tab', data-toggle='tab')
                     h4 3.
@@ -59,9 +60,26 @@ html(lang='en')
                         .face.back
                           div.list-group()
                             a.list-group-item.active(href="#") Human Assistance
+                            .panel-group(role='tablist')
+                              .panel.panel-default
+                                  .panel-heading(data-bind='click:expandCategory' role='tab', data-toggle='collapse', href='#collapseListGroup1', aria-expanded='false')
+                                    h4.panel-title()
+                                      a Sub Catergory
+                                      span.pull-right.glyphicon.glyphicon-circle-arrow-right()
+                                      span.pull-right.glyphicon.glyphicon-circle-arrow-down()
+                                  #collapseListGroup1.panel-collapse.collapse(role='tabpanel', aria-expanded='false')
+                                    ul.list-group
+                                      li.list-group-item 
+                                        a(href="#" data-bind='click:selectIndicator' data-content="MCP" title="Source") Indicator 1
+                                      |           
+                                      li.list-group-item
+                                        a(href="#" data-bind='click:selectIndicator' data-content="MCP" title="Source") Indicator B
+                                      |           
+                                      li.list-group-item
+                                        a(href="#" data-bind='click:selectIndicator' data-content="MCP" title="Source") Indicator III
                             a.list-group-item(href="#" data-bind='click:selectIndicator' data-content="MCP" title="Source") Protection, Assistance and Solutions
                             a.list-group-item(href="#" data-bind='click:selectIndicator' data-content="World Bank" title="Source") Disaster Readiness
-                            a.list-group-item(href="#" data-bind='click:selectIndicator' data-content="aha aja a" title="Source") Migration Management
+                            a.list-group-item(href="#" data-bind='click:selectIndicator' data-content="test abcdef" title="Source") Migration Management
                     .col-sm-4.col-md-4.flip
                         .card
                           .face.front

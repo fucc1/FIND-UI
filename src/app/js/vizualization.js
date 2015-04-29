@@ -13,11 +13,17 @@
     });
 
     $(".flip").click(function() {
+
+        if (expandedCategory) {
+            expandedCategory = false;
+            return;
+        }
+
         $(".flip").css("z-index", 10);
         $(this).css("z-index", 1000);
-        $(".flip").find(".list-group").removeClass("shadow");
+        $(".flip").find("div.list-group").removeClass("shadow");
 
-        $(this).find(".list-group").addClass("shadow");
+        $(this).find("div.list-group").addClass("shadow");
 
         var isFlipped = $(this).find(".card").hasClass("flipped");
 
@@ -25,21 +31,24 @@
         //- $(".list-group").css("display": "none");
 
         if (isFlipped) {
-            $(this).find(".card").removeClass("flipped");
+            //$(this).find(".card").removeClass("flipped");
             // $(this).find(".list-group").removeClass("show-me");
 
         } else {
             $(this).find(".card").addClass("flipped");
             //$(this).find(".list-group").addClass("show-me");
         }
-        return false;
+        return true;
     });
 
+    var expandedCategory = false;
 
     var model = {
 
         selectIndicator: function() {
-
+            if (expandedCategory) {
+                return;
+            }
             var indicatorLabel = arguments[1].target.text;
             this.activeIndicator(indicatorLabel);
             var current = this.selectionTracker();
@@ -66,9 +75,26 @@
 
         },
 
+        expandCategory: function(model, evt) {
+
+            expandedCategory = true;
+
+
+        },
+
         clearIndicator: function() {
 
-            alert("clome me");
+            var current = model.selectionTracker();
+            current.indicator = false;
+            model.selectionTracker(current);
+
+        },
+
+        clearChart: function() {
+
+            var current = model.selectionTracker();
+            current.vizualization = false;
+            model.selectionTracker(current);
 
         },
 
