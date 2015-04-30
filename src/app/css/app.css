@@ -12,13 +12,13 @@ body {
   font-family: 'Roboto', sans-serif;
 }
 .app a {
-  color: #ccc95c;
+  color: #852224;
 }
 .app .navbar-default {
-  background-color: #1a398c;
+  background-color: #336b99;
 }
 .app .navbar-default .navbar-nav > .active > a {
-  background-color: #152c70;
+  background-color: #244c80;
 }
 .app .navbar-default .navbar-nav > .active > a,
 .app .navbar-default .navbar-nav > li > a {
@@ -47,10 +47,10 @@ body {
   background-color: #5c74b4;
 }
 .app .bg-dark {
-  background-color: #152c70;
+  background-color: #244c80;
 }
 .app .bg-medium {
-  background-color: #1a398c;
+  background-color: #336b99;
 }
 .app .font-light {
   color: #fff;
@@ -74,7 +74,7 @@ body {
   max-width: 150px;
 }
 .app .bg-container {
-  background-color: #d5878a;
+  background-color: #eae6e6;
 }
 .app .map-bg {
   background: url("../images/map.png") center center no-repeat;
@@ -144,7 +144,7 @@ body {
   border-left: none;
   border-right: none;
   border-radius: 0px;
-  color: #1a398c;
+  color: #336b99;
   font-size: 28px;
   font-weight: 400;
 }
@@ -155,8 +155,8 @@ body {
   position: absolute;
   top: -5px;
   right: 5px;
-  background-image: -webkit-linear-gradient(top, #5c74b4, #152c70);
-  border: 1px solid #152c70;
+  background-image: -webkit-linear-gradient(top, #5c74b4, #244c80);
+  border: 1px solid #244c80;
 }
 /****** MEDIA QUERIES ************/
 @media (min-width: 768px) {
@@ -165,6 +165,19 @@ body {
   }
   .navbar-nav > li > a {
     padding: 20px;
+  }
+  .category-wrapper {
+    height: 210px;
+  }
+}
+@media (min-width: 992px) {
+  .category-wrapper {
+    height: 210px;
+  }
+}
+@media (min-width: 1200px) {
+  .category-wrapper {
+    height: 210px;
   }
 }
 /*categories*/
@@ -230,8 +243,7 @@ body {
   background-size: contain;
 }
 .app .category-wrapper {
-  border-radius: 15px;
-  border: 1px solid #d5878a;
+  border-radius: 0px;
 }
 .app .afghanistan {
   background: url("http://www.sciencekids.co.nz/images/pictures/flags96/Afghanistan.jpg") center center no-repeat;
@@ -277,8 +289,8 @@ body {
   background-size: contain;
 }
 .app .category-wrapper {
-  border-radius: 15px;
-  border: 1px solid #d5878a;
+  border-radius: 0px;
+  border: 1px solid #eae6e6;
 }
 /*App Stylus*/
 /*Header Stylus*/

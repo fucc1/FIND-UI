@@ -1,0 +1,81 @@
+{
+
+    "data": {
+
+        "categories": {
+
+            "total": 9,
+
+            "data": {
+                "cat1": {
+                    "label": "Human Assistance",
+                    "indicators": ["ind01", "ind03"],
+                    "subcategories": {
+                        "subcat1": {
+                            "label": "Subcategory 1",
+                            "indicators": ["ind02"]
+                        },
+                        "subcat2": {
+                            "label": "Subcategory 2",
+                            "indicators": ["ind01"]
+                        }
+                    }
+                }
+
+            }
+        },
+
+        "sources": {
+
+            "total": 22,
+
+            "data": {
+                "src1": {
+                    "label": "Source 1",
+                    "indicators": ["ind01", "indi02"]
+                },
+                "src2": {
+                    "label": "Source 2",
+                    "indicators": ["ind02", "indi03"]
+                },
+                "src3": {
+                    "label": "Source 3",
+                    "indicators": ["ind02", "indi03"]
+                },
+                "src4": {
+                    "label": "Source 4",
+                    "indicators": ["ind02", "indi03"]
+                }
+            }
+        },
+
+        "indicators": {
+
+            "total": 350,
+
+            "data": {
+
+                "ind01": {
+                    "label": "indicator 1",
+                    "source": "src1",
+                    "category": "cat1"
+                },
+
+                "ind02": {
+                    "label": "indicator 2",
+                    "source": "src2",
+                    "category": "cat1"
+                },
+
+                "ind03": {
+                    "label": "indicator 3",
+                    "source": "src3",
+                    "category": "cat1"
+                }
+
+            }
+
+        }
+    }
+
+}

@@ -89,6 +89,10 @@
   .category-wrapper
       cursor pointer
       
+      &.well
+        background-color $bgContainer
+      .well
+        background-color $bgContainer
   .flip
     .category-wrapper  
       transition 0.5s all
@@ -107,6 +111,22 @@
     
   .list-group-item
     border none
+    
+  .btn-group
+    width 100%
+    label
+      width 33.33%
+      
+    .btn-primary
+      background none
+      color $colorDark
+      border none
+      
+      &.active
+        border-top 1px solid $bgMedium
+      
+      
+  
 
         
 .app .shadow

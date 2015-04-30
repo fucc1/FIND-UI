@@ -80,6 +80,12 @@
 .app .category-wrapper {
   cursor: pointer;
 }
+.app .category-wrapper.well {
+  background-color: #eae6e6;
+}
+.app .category-wrapper .well {
+  background-color: #eae6e6;
+}
 .app .flip .category-wrapper {
   -webkit-transition: 0.5s all;
   transition: 0.5s all;
@@ -100,6 +106,20 @@
 }
 .app .list-group-item {
   border: none;
+}
+.app .btn-group {
+  width: 100%;
+}
+.app .btn-group label {
+  width: 33.33%;
+}
+.app .btn-group .btn-primary {
+  background: none;
+  color: #852224;
+  border: none;
+}
+.app .btn-group .btn-primary.active {
+  border-top: 1px solid #336b99;
 }
 .app .shadow {
   box-shadow: 0 5px 10px rgba(0,0,0,0.2);

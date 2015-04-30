@@ -36,7 +36,7 @@ html, body
 	font-family $family
 	
 .app a
-	color #CCC95C
+	color $links
 
 .app .navbar-default
 	background-color $bgMedium
@@ -191,14 +191,14 @@ html, body
 	right 5px
 	background-image -webkit-linear-gradient(top, $bgLight, $bgDark)
 	border 1px solid $bgDark
-	
+
 
 
 	
 		
 /****** MEDIA QUERIES ************/
 	
-
+//small
 @media (min-width: 768px)
 	
 	.app .jumbotron
@@ -207,6 +207,22 @@ html, body
 	.navbar-nav > li > a
 		padding 20px
 		
+	.category-wrapper
+		height 210px
+
+//medium
+@media (min-width: 992px)
+
+	.category-wrapper
+		height 210px
+
+
+//large
+@media (min-width: 1200px)
+
+	.category-wrapper
+		height 210px
+
 /*categories*/
 @import "categories.styl"
 @import "countries.styl"
