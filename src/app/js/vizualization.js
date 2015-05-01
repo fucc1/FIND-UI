@@ -68,7 +68,7 @@
             current.indicator = true;
             current.vizualization = true;
             this.selectionTracker(current);
-            //move to second
+            //move to third tab
             $('#vizTabs a[href="#vizualize"]').tab('show');
 
             window.loadIndicator(dataLoadHandler);
