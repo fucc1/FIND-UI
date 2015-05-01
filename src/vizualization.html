@@ -57,7 +57,22 @@
           <div role="tabpanel">
             <ul id="vizTabs" role="tablist" class="nav nav-tabs nav-justified">                                
               <li role="presentation" class="active dropdown"><a href="#by-category" aria-controls="by-category" role="tab" data-toggle="tab">
-                  <h4><span data-bind="visible:!selectionTracker().indicator">1. Select Indicator</span><span data-bind="html:activeIndicator,visible:selectionTracker().indicator" class="selected-tab-value"></span><span data-bind="click:clearIndicator,visible:selectionTracker().indicator" class="glyphicon glyphicon-remove"></span></h4></a></li>
+                  <h4><span data-bind="visible:!selectionTracker().indicator">1. Select Indicator</span><span data-bind="html:activeIndicator,visible:selectionTracker().indicator" class="selected-tab-value"></span><span data-bind="click:clearIndicator,visible:selectionTracker().indicator" class="glyphicon glyphicon-remove"></span></h4>
+                  <div class="row">
+                    <div class="col-md-12 col-sm-12 col-lg-12">
+                      <div data-toggle="buttons" class="btn-group">
+                        <label data-bind="click:function(){showView('category')}" class="btn btn-primary btn-category active">
+                          <input id="by-category-radio2" type="radio" name="options" autocomplete="off"> By Category
+                        </label>
+                        <label data-bind="click:function(){showView('source')}" class="btn btn-primary btn-source">
+                          <input id="by-alpha-radio2" type="radio" name="options" autocomplete="off" checked="true"> By Source
+                        </label>
+                        <label data-bind="click:function(){showView('alphabetic')}" class="btn btn-primary btn-alphabetic">
+                          <input id="by-alpha-radio2" type="radio" name="options" autocomplete="off" checked="true"> A - Z
+                        </label>
+                      </div>
+                    </div>
+                  </div></a></li>
               <li role="presentation"><a href="#select-vizualization" aria-controls="select-vizualization" role="tab" data-toggle="tab">
                   <h4><span data-bind="visible:!selectionTracker().vizualization">2. Choose Vizualization</span><span data-bind="html:activeChart,visible:selectionTracker().vizualization" class="selected-tab-value"></span><span data-bind="click:clearChart,visible:selectionTracker().vizualization" class="glyphicon glyphicon-remove"></span></h4></a></li>
               <li role="presentation" class="disabled"><a href="#vizualize" aria-controls="vizualize" role="tab" data-toggle="tab">
@@ -70,22 +85,7 @@
               <div class="row">
                 <p></p>
               </div>
-              <div id="by-category" role="tabpanel" class="tab-pane active">
-                <div class="row">
-                  <div class="col-md-12 col-sm-12 col-lg-12">
-                    <div data-toggle="buttons" class="btn-group">
-                      <label data-bind="click:function(){showView('category')}" class="btn btn-primary btn-category active">
-                        <input id="by-category-radio2" type="radio" name="options" autocomplete="off"> By Category
-                      </label>
-                      <label data-bind="click:function(){showView('source')}" class="btn btn-primary btn-source">
-                        <input id="by-alpha-radio2" type="radio" name="options" autocomplete="off" checked="true"> By Source
-                      </label>
-                      <label data-bind="click:function(){showView('alphabetic')}" class="btn btn-primary btn-alphabetic">
-                        <input id="by-alpha-radio2" type="radio" name="options" autocomplete="off" checked="true"> A - Z
-                      </label>
-                    </div>
-                  </div>
-                </div>
+              <div id="by-category" role="tabpanel" class="tab-pane active">                 
                 <div class="row">
                   <p></p>
                 </div>
@@ -230,19 +230,6 @@
               </div>
               <div id="by-source" role="tabpanel" class="tab-pane">
                 <div class="row">
-                  <div data-toggle="buttons" class="pull-right btn-group">
-                    <label data-bind="click:function(){showView('category')}" class="btn btn-primary btn-category">
-                      <input id="by-category-radio2" type="radio" name="options" autocomplete="off"> By Category
-                    </label>
-                    <label data-bind="click:function(){showView('source')}" class="btn btn-primary btn-source">
-                      <input id="by-alpha-radio2" type="radio" name="options" autocomplete="off" checked="true"> By Source
-                    </label>
-                    <label data-bind="click:function(){showView('alphabetic')}" class="btn btn-primary btn-alphabetic active">
-                      <input id="by-alpha-radio2" type="radio" name="options" autocomplete="off" checked="true"> A - Z
-                    </label>
-                  </div>
-                </div>
-                <div class="row">
                   <p></p>
                 </div>
                 <div class="row">
@@ -370,19 +357,6 @@
                 </div>
               </div>
               <div id="all-indicators" role="tabpanel" class="tab-pane">
-                <div class="row">
-                  <div data-toggle="buttons" class="pull-right btn-group">
-                    <label data-bind="click:function(){showView('category')}" class="btn btn-primary active btn-category">
-                      <input id="by-category-radio2" type="radio" name="options" autocomplete="off"> By Category
-                    </label>
-                    <label data-bind="click:function(){showView('source')}" class="btn btn-primary btn-source">
-                      <input id="by-alpha-radio2" type="radio" name="options" autocomplete="off" checked="true"> By Source
-                    </label>
-                    <label data-bind="click:function(){showView('alphabetic')}" class="btn btn-primary btn-alphabetic">
-                      <input id="by-alpha-radio2" type="radio" name="options" autocomplete="off" checked="true"> A - Z
-                    </label>
-                  </div>
-                </div>
                 <div class="row">
                   <p></p>
                 </div>

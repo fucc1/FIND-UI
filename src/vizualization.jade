@@ -19,6 +19,18 @@ html(lang='en')
                       span(data-bind="visible:!selectionTracker().indicator") 1. Select Indicator
                       span.selected-tab-value(data-bind="html:activeIndicator,visible:selectionTracker().indicator")
                       span.glyphicon.glyphicon-remove(data-bind="click:clearIndicator,visible:selectionTracker().indicator")
+                    .row
+                      .col-md-12.col-sm-12.col-lg-12
+                        div.btn-group(data-toggle='buttons')
+                          label.btn.btn-primary.btn-category.active(data-bind="click:function(){showView('category')}")
+                            input#by-category-radio2(type='radio', name='options', autocomplete='off')
+                            |  By Category
+                          label.btn.btn-primary.btn-source(data-bind="click:function(){showView('source')}")
+                            input#by-alpha-radio2(type='radio', name='options', autocomplete='off', checked='true')
+                            |  By Source
+                          label.btn.btn-primary.btn-alphabetic(data-bind="click:function(){showView('alphabetic')}")
+                            input#by-alpha-radio2(type='radio', name='options', autocomplete='off', checked='true')
+                            |  A - Z
                 li(role='presentation')
                   a(href='#select-vizualization', aria-controls='select-vizualization', role='tab', data-toggle='tab')
                     h4
@@ -35,19 +47,7 @@ html(lang='en')
                 .row
                   p
                 //- BY CATEGORY
-                #by-category.tab-pane.active(role='tabpanel')
-                  .row
-                    .col-md-12.col-sm-12.col-lg-12
-                      div.btn-group(data-toggle='buttons')
-                        label.btn.btn-primary.btn-category.active(data-bind="click:function(){showView('category')}")
-                          input#by-category-radio2(type='radio', name='options', autocomplete='off')
-                          |  By Category
-                        label.btn.btn-primary.btn-source(data-bind="click:function(){showView('source')}")
-                          input#by-alpha-radio2(type='radio', name='options', autocomplete='off', checked='true')
-                          |  By Source
-                        label.btn.btn-primary.btn-alphabetic(data-bind="click:function(){showView('alphabetic')}")
-                          input#by-alpha-radio2(type='radio', name='options', autocomplete='off', checked='true')
-                          |  A - Z
+                #by-category.tab-pane.active(role='tabpanel')                  
                   .row
                     p
                   .row
@@ -215,17 +215,6 @@ html(lang='en')
                 //- BY SOURCE
                 #by-source.tab-pane(role='tabpanel')
                   .row
-                    div.pull-right.btn-group(data-toggle='buttons')
-                      label.btn.btn-primary.btn-category(data-bind="click:function(){showView('category')}")
-                        input#by-category-radio2(type='radio', name='options', autocomplete='off')
-                        |  By Category
-                      label.btn.btn-primary.btn-source(data-bind="click:function(){showView('source')}")
-                        input#by-alpha-radio2(type='radio', name='options', autocomplete='off', checked='true')
-                        |  By Source
-                      label.btn.btn-primary.btn-alphabetic.active(data-bind="click:function(){showView('alphabetic')}")
-                        input#by-alpha-radio2(type='radio', name='options', autocomplete='off', checked='true')
-                        |  A - Z
-                  .row
                     p
                   .row
                     .col-sm-4.col-md-4.flip
@@ -367,17 +356,6 @@ html(lang='en')
 
                 //- ALL INDICTORS                 
                 #all-indicators.tab-pane(role='tabpanel')
-                  .row
-                    div.pull-right.btn-group(data-toggle='buttons')
-                      label.btn.btn-primary.active.btn-category(data-bind="click:function(){showView('category')}")
-                        input#by-category-radio2(type='radio', name='options', autocomplete='off')
-                        |  By Category
-                      label.btn.btn-primary.btn-source(data-bind="click:function(){showView('source')}")
-                        input#by-alpha-radio2(type='radio', name='options', autocomplete='off', checked='true')
-                        |  By Source
-                      label.btn.btn-primary.btn-alphabetic(data-bind="click:function(){showView('alphabetic')}")
-                        input#by-alpha-radio2(type='radio', name='options', autocomplete='off', checked='true')
-                        |  A - Z
                   .row
                     p
                   div.list-group.row()
