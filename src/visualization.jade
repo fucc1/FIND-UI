@@ -1,7 +1,7 @@
 doctype html
 html(lang='en')
   include ./includes/head.jade  
-  link(href='app/css/vizualization.css', rel='stylesheet')
+  link(href='app/css/visualization.css', rel='stylesheet')
   body.app
     include ./includes/navigation.jade
     .container
@@ -368,7 +368,7 @@ html(lang='en')
                       a.list-group-item.col-md-4(href="#" data-bind='click:selectIndicator' data-content="MCP" title="Source") eeeee
                       a.list-group-item.col-md-4(href="#" data-bind='click:selectIndicator' data-content="MCP" title="Source") ffffffffffffff
                       a.list-group-item.col-md-4(href="#" data-bind='click:selectIndicator' data-content="MCP" title="Source") ggggggggg ggggggggggg
-                      a.list-group-item.col-md-4(href="#" data-bind='click:selectIndicator' data-content="MCP" title="Source") hhh h hhh hhh h h h  h h h h
+                      a.list-group-item.col-md-4(href="#" data-bind='click:selectIndicator' data-content="MCP" title="Source") ßhhh h hhh hhh h h h  h h h h
                       a.list-group-item.col-md-4(href="#" data-bind='click:selectIndicator' data-content="MCP" title="Source") iii
                 #select-vizualization.tab-pane(role='tabpanel')
                   .row
@@ -400,11 +400,18 @@ html(lang='en')
                         
       include ./includes/footer.jade
 link(href='//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css', rel='stylesheet')
+
 script(src='bower_components/jquery-ui/jquery-ui.js')
+script(src='bower_components/lodash/lodash.min.js')
 script(src='//code.highcharts.com/highcharts.js')
 script(src='//code.highcharts.com/modules/exporting.js')
 script(src='bower_components/knockout/dist/knockout.js')
 script(src='app/js/lib/jquery.bootstrap.wizard.min.js')
-script(src='app/js/vizualization.js')
-script(src='app/js/loader.js')
-script(src='app/js/lib/prettify.js')
+script(src='app/js/visualization/loader.js')
+script(src='app/js/visualization/visualization.js')
+
+  
+script(src='bower_components/requirejs/require.js')
+script(src='app/js/visualization/main.js')
+
+

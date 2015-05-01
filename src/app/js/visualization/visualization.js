@@ -58,6 +58,8 @@
             //move to second
             $('#vizTabs a[href="#select-vizualization"]').tab('show')
 
+            window.loadIndicatorData("http://apiurl", indicatorDataLoadHandler);
+
         },
 
         selectVizualization: function(type) {
@@ -71,7 +73,7 @@
             //move to third tab
             $('#vizTabs a[href="#vizualize"]').tab('show');
 
-            window.loadIndicator(dataLoadHandler);
+
 
         },
 
@@ -139,12 +141,21 @@
 
     }
 
-    //enable knockout
-    ko.applyBindings(model);
 
 
 
-    var dataLoadHandler = function(response) {
+
+    var indicatorListLoadHandler = function(response) {
+        debugger;
+
+        //enable knockout
+        ko.applyBindings(model);
+
+    }
+
+    window.loadIndicatorList("http://apiurl", indicatorListLoadHandler);
+
+    var indicatorDataLoadHandler = function(response) {
 
         //prepare region search 
         var availableRegions = [
