@@ -99,37 +99,7 @@
                         </div>
                       </div>
                       <div class="face back">
-                        <div class="list-group"><a href="#" data-bind="html:label" class="list-group-item active"></a><span data-bind="foreach:indicators"><a href="#" data-bind="click:$root.selectIndicator,html:label" data-content="MCP" title="Source" class="list-group-item"></a></span></div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="row">
-                  <div class="col-sm-4 col-md-4 col-sm-2 flip">
-                    <div class="card">
-                      <div class="face front">
-                        <div class="well category-wrapper"><span class="badge">3</span>
-                          <div class="well category icon-category-70"></div>
-                          <h4>Human Assistance</h4>
-                        </div>
-                      </div>
-                      <div class="face back">
-                        <div class="list-group"><a href="#" class="list-group-item active">Human Assistance</a>
-                          <div role="tablist" class="panel-group">
-                            <div class="panel panel-default">
-                              <div data-bind="click:expandCategory" role="tab" data-toggle="collapse" href="#collapseListGroup1" aria-expanded="false" class="panel-heading">
-                                <h4 class="panel-title"><a>Sub Catergory</a><span class="pull-right glyphicon glyphicon-circle-arrow-right"></span><span class="pull-right glyphicon glyphicon-circle-arrow-down"></span></h4>
-                              </div>
-                              <div id="collapseListGroup1" role="tabpanel" aria-expanded="false" class="panel-collapse collapse">
-                                <ul class="list-group">
-                                  <li class="list-group-item"><a href="#" data-bind="click:selectIndicator" data-content="MCP" title="Source">Indicator 1</a></li>          
-                                  <li class="list-group-item"><a href="#" data-bind="click:selectIndicator" data-content="MCP" title="Source">Indicator B</a></li>          
-                                  <li class="list-group-item"><a href="#" data-bind="click:selectIndicator" data-content="MCP" title="Source">Indicator III</a></li>
-                                </ul>
-                              </div>
-                            </div>
-                          </div><a href="#" data-bind="click:selectIndicator" data-content="MCP" title="Source" class="list-group-item">Protection, Assistance and Solutions</a><a href="#" data-bind="click:selectIndicator" data-content="World Bank" title="Source" class="list-group-item">Disaster Readiness</a><a href="#" data-bind="click:selectIndicator" data-content="test abcdef" title="Source" class="list-group-item">Migration Management</a>
-                        </div>
+                        <div class="list-group"><a href="#" data-bind="html:label" class="list-group-item active"></a><span data-bind="foreach:indicators"><a href="#" data-bind="click:$root.selectIndicator,html:label" data-content="MCP" title="Source" class="list-group-item">                             </a></span></div>
                       </div>
                     </div>
                   </div>
@@ -139,125 +109,17 @@
                 <div class="row">
                   <p></p>
                 </div>
-                <div class="row">
+                <div data-bind="foreach:sourcesModel" class="row">
                   <div class="col-sm-4 col-md-4 flip">
                     <div class="card">
                       <div class="face front">
-                        <div class="well category-wrapper"><span class="badge">3</span>
+                        <div class="well category-wrapper"><span data-bind="html:length" class="badge"></span>
                           <div class="well category icon-category-70"></div>
-                          <h4>MCP</h4>
+                          <h4 data-bind="html:label"></h4>
                         </div>
                       </div>
                       <div class="face back">
-                        <div class="list-group"><a href="#" class="list-group-item active">Human Assistance</a><a href="#" data-bind="click:selectIndicator" data-content="MCP" title="Source" class="list-group-item">Protection, Assistance and Solutions</a><a href="#" data-bind="click:selectIndicator" data-content="World Bank" title="Source" class="list-group-item">Disaster Readiness</a><a href="#" data-bind="click:selectIndicator" data-content="aha aja a" title="Source" class="list-group-item">Migration Management</a></div>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col-sm-4 col-md-4 flip">
-                    <div class="card">
-                      <div class="face front">
-                        <div class="well category-wrapper"><span class="badge">2</span>
-                          <div class="well category icon-category-80"></div>
-                          <h4>UNCP</h4>
-                        </div>
-                      </div>
-                      <div class="face back">
-                        <div class="list-group"><a href="#" data-bind="click:selectIndicator" data-content="MCP" title="Source" class="list-group-item active">Program Management</a><a href="#" data-bind="click:selectIndicator" data-content="MCP" title="Source" class="list-group-item">Program Design and Learning</a><a href="#" data-bind="click:selectIndicator" data-content="MCP" title="Source" class="list-group-item">Administration and Oversight</a></div>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col-sm-4 col-md-4 flip">
-                    <div class="card">
-                      <div class="face front">
-                        <div class="well category-wrapper"><span class="badge">4</span>
-                          <div class="well category icon-category-20"></div>
-                          <h4>World Development Institute</h4>
-                        </div>
-                      </div>
-                      <div class="face back">
-                        <div class="list-group"><a href="#" class="list-group-item active">Democracy, Human Rights, and Governance</a><a href="#" data-bind="click:selectIndicator" data-content="MCP" title="Source" class="list-group-item">Rule of Law and Human Rights</a><a href="#" data-bind="click:selectIndicator" data-content="MCP" title="Source" class="list-group-item">Good Governance</a><a href="#" data-bind="click:selectIndicator" data-content="MCP" title="Source" class="list-group-item">Political Competition and Consensus-Building</a><a href="#" data-bind="click:selectIndicator" data-content="MCP" title="Source" class="list-group-item">Civil Society</a></div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="row">
-                  <div class="col-sm-4 col-md-4 flip">
-                    <div class="card">
-                      <div class="face front">
-                        <div class="well category-wrapper"><span class="badge">8</span>
-                          <div class="well category icon-category-50"></div>
-                          <h4>Economic Development</h4>
-                        </div>
-                      </div>
-                      <div class="face back">
-                        <div class="list-group"><a href="#" class="list-group-item active">Economic Development</a><a href="#" data-bind="click:selectIndicator" data-content="MCP" title="Source" class="list-group-item">Macroeconomic Foundation for Growth</a><a href="#" data-bind="click:selectIndicator" data-content="MCP" title="Source" class="list-group-item">Trade and Investment</a><a href="#" data-bind="click:selectIndicator" data-content="MCP" title="Source" class="list-group-item">Financial Sector</a><a href="#" data-bind="click:selectIndicator" data-content="MCP" title="Source" class="list-group-item">Infrastructure</a><a href="#" data-bind="click:selectIndicator" data-content="MCP" title="Source" class="list-group-item">Agriculture</a><a href="#" data-bind="click:selectIndicator" data-content="MCP" title="Source" class="list-group-item">Private Sector Competitiveness</a><a href="#" data-bind="click:selectIndicator" data-content="MCP" title="Source" class="list-group-item">Economic Opportunity</a><a href="#" data-bind="click:selectIndicator" data-content="MCP" title="Source" class="list-group-item">Environment</a></div>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col-sm-4 col-md-4 flip">
-                    <div class="card">
-                      <div class="face front">
-                        <div class="well category-wrapper"><span class="badge">2</span>
-                          <div class="well category icon-category-40"></div>
-                          <h4>Education and Social Services</h4>
-                        </div>
-                      </div>
-                      <div class="face back">
-                        <div class="list-group"><a href="#" class="list-group-item active">Education and Social Services</a><a href="#" data-bind="click:selectIndicator" data-content="MCP" title="Source" class="list-group-item">Basic Education</a><a href="#" data-bind="click:selectIndicator" data-content="MCP" title="Source" class="list-group-item">Higher Education</a></div>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col-sm-4 col-md-4 flip">
-                    <div class="card">
-                      <div class="face front">
-                        <div class="well category-wrapper"><span class="badge">9</span>
-                          <div class="well category icon-category-30"></div>
-                          <h4>Health</h4>
-                        </div>
-                      </div>
-                      <div class="face back">
-                        <div class="list-group"><a href="#" class="list-group-item active">Health</a><a href="#" data-bind="click:selectIndicator" data-content="MCP" title="Source" class="list-group-item">HIV/AIDS</a><a href="#" data-bind="click:selectIndicator" data-content="MCP" title="Source" class="list-group-item">Tuberculosis</a><a href="#" data-bind="click:selectIndicator" data-content="MCP" title="Source" class="list-group-item">Malaria</a><a href="#" data-bind="click:selectIndicator" data-content="MCP" title="Source" class="list-group-item">Pandemic Influenza</a><a href="#" data-bind="click:selectIndicator" data-content="MCP" title="Source" class="list-group-item">Other Public Health Threats</a><a href="#" data-bind="click:selectIndicator" data-content="MCP" title="Source" class="list-group-item">Maternal and Child Health</a><a href="#" data-bind="click:selectIndicator" data-content="MCP" title="Source" class="list-group-item">Family Planning and Reproductive Health</a><a href="#" data-bind="click:selectIndicator" data-content="MCP" title="Source" class="list-group-item">Water Supply and Sanitation</a><a href="#" data-bind="click:selectIndicator" data-content="MCP" title="Source" class="list-group-item">Nutrition                        </a></div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="row">
-                  <div class="col-sm-4 col-md-4 flip">
-                    <div class="card">
-                      <div class="face front">
-                        <div class="well category-wrapper"><span class="badge">4</span>
-                          <div class="well category icon-category-90"></div>
-                          <h4>Multi-Sector</h4>
-                        </div>
-                      </div>
-                      <div class="face back">
-                        <div class="list-group"><a href="#" class="list-group-item active">Multi-Sector</a><a href="#" data-bind="click:selectIndicator" data-content="MCP" title="Source" class="list-group-item">Indicator 1</a><a href="#" data-bind="click:selectIndicator" data-content="MCP" title="Source" class="list-group-item">Indicator 2</a><a href="#" data-bind="click:selectIndicator" data-content="MCP" title="Source" class="list-group-item">Indicator 3</a><a href="#" data-bind="click:selectIndicator" data-content="MCP" title="Source" class="list-group-item">Indicator 4</a></div>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col-sm-4 col-md-4 flip">
-                    <div class="card">
-                      <div class="face front">
-                        <div class="well category-wrapper"><span class="badge">6</span>
-                          <div class="well category icon-category-60"></div>
-                          <h4>Environment</h4>
-                        </div>
-                      </div>
-                      <div class="face back">
-                        <div class="list-group"><a href="#" class="list-group-item active">Environment</a><a href="#" data-bind="click:selectIndicator" data-content="MCP" title="Source" class="list-group-item">Counter-Terrorism</a><a href="#" data-bind="click:selectIndicator" data-content="MCP" title="Source" class="list-group-item">Combating Weapons of Mass Destruction (WMD)</a><a href="#" data-bind="click:selectIndicator" data-content="MCP" title="Source" class="list-group-item">Stabilization Operations and Security Sector Reform</a><a href="#" data-bind="click:selectIndicator" data-content="MCP" title="Source" class="list-group-item">Counter-Narcotic</a><a href="#" data-bind="click:selectIndicator" data-content="MCP" title="Source" class="list-group-item">Transnational Crime</a><a href="#" data-bind="click:selectIndicator" data-content="MCP" title="Source" class="list-group-item">Conflict Mitigation and Reconciliation</a></div>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col-sm-4 col-md-4 flip">
-                    <div class="card">
-                      <div class="face front">
-                        <div class="well category-wrapper"><span class="badge">6</span>
-                          <div class="well category icon-category-10"></div>
-                          <h4>Peace & Security</h4>
-                        </div>
-                      </div>
-                      <div class="face back">
-                        <div class="list-group"><a href="#" class="list-group-item active">Peace & Security</a><a href="#" data-bind="click:selectIndicator" data-content="MCP" title="Source" class="list-group-item">Counter-Terrorism</a><a href="#" data-bind="click:selectIndicator" data-content="MCP" title="Source" class="list-group-item">Combating Weapons of Mass Destruction (WMD)</a><a href="#" data-bind="click:selectIndicator" data-content="MCP" title="Source" class="list-group-item">Stabilization Operations and Security Sector Reform</a><a href="#" data-bind="click:selectIndicator" data-content="MCP" title="Source" class="list-group-item">Counter-Narcotic</a><a href="#" data-bind="click:selectIndicator" data-content="MCP" title="Source" class="list-group-item">Transnational Crime</a><a href="#" data-bind="click:selectIndicator" data-content="MCP" title="Source" class="list-group-item">Conflict Mitigation and Reconciliation </a></div>
+                        <div class="list-group"><a href="#" data-bind="html:label" class="list-group-item active"></a><span data-bind="foreach:indicators"><a href="#" data-bind="click:$root.selectIndicator,html:label" data-content="MCP" title="Source" class="list-group-item"></a></span></div>
                       </div>
                     </div>
                   </div>
@@ -267,7 +129,7 @@
                 <div class="row">
                   <p></p>
                 </div>
-                <div class="list-group row"><a href="#" data-bind="click:selectIndicator" data-content="MCP" title="Source" class="list-group-item col-md-4">Agriculture</a><a href="#" data-bind="click:selectIndicator" data-content="MCP" title="Source" class="list-group-item col-md-4">Basic Education</a><a href="#" data-bind="click:selectIndicator" data-content="MCP" title="Source" class="list-group-item col-md-4">Civil Society                     </a><a href="#" data-bind="click:selectIndicator" data-content="MCP" title="Source" class="list-group-item col-md-4">Counter-Terrorism</a><a href="#" data-bind="click:selectIndicator" data-content="MCP" title="Source" class="list-group-item col-md-4">Combating Weapons of Mass Destruction (WMD)</a><a href="#" data-bind="click:selectIndicator" data-content="MCP" title="Source" class="list-group-item col-md-4">Counter-Narcotic</a><a href="#" data-bind="click:selectIndicator" data-content="MCP" title="Source" class="list-group-item col-md-4">eeeee</a><a href="#" data-bind="click:selectIndicator" data-content="MCP" title="Source" class="list-group-item col-md-4">ffffffffffffff</a><a href="#" data-bind="click:selectIndicator" data-content="MCP" title="Source" class="list-group-item col-md-4">ggggggggg ggggggggggg</a><a href="#" data-bind="click:selectIndicator" data-content="MCP" title="Source" class="list-group-item col-md-4">ßhhh h hhh hhh h h h  h h h h</a><a href="#" data-bind="click:selectIndicator" data-content="MCP" title="Source" class="list-group-item col-md-4">iii</a></div>
+                <div data-bind="foreach:indicatorsModel" class="list-group row"><a href="#" data-bind="click:$root.selectIndicator,html:label" data-content="MCP" title="Source" class="list-group-item col-md-4"></a></div>
               </div>
               <div id="select-vizualization" role="tabpanel" class="tab-pane">
                 <div class="row">

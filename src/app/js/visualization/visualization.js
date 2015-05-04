@@ -209,6 +209,7 @@
 
             var newSource = {
                 "label": sourcesAll.data[src].label,
+                "length": sourcesAll.data[src].indicators.length,
                 "indicators": indicatorsInSource
             }
 
@@ -216,7 +217,21 @@
 
         }
 
-        //Sort out indicators
+        //Get the actual categories and sources
+        for (var ind in indicatorsAll.data) {
+
+            var newIndicator = indicatorsAll.data[ind];
+            var sourceId = newIndicator.source;
+            var categoryId = newIndicator.category;
+
+
+            newIndicator.source = _.get(sourcesAll, 'data[sourceId].label');
+            newIndicator.category = _.get(categoriesAll, 'data[categoryId].label');
+
+            indicatorsModel.push(newIndicator);
+
+
+        }
 
 
         model.categoriesModel(categoriesModel);
