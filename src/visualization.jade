@@ -50,6 +50,20 @@ html(lang='en')
                 #by-category.tab-pane.active(role='tabpanel')                  
                   .row
                     p
+                  .row(data-bind="foreach:categoriesModel")
+                    .col-sm-4.col-md-4.col-sm-2.flip
+                      .card
+                        .face.front
+                          div.well.category-wrapper()
+                            span.badge(data-bind="html:length")
+                            div.well.category.icon-category-70()
+                            h4(data-bind="html:label")
+                        .face.back
+                          div.list-group()
+                            a.list-group-item.active(href="#" data-bind="html:label")
+                            span(data-bind="foreach:indicators")
+                              a.list-group-item(href="#" data-bind='click:$root.selectIndicator,html:label' data-content="MCP" title="Source")
+                              
                   .row
                     .col-sm-4.col-md-4.col-sm-2.flip
                       .card
@@ -81,136 +95,6 @@ html(lang='en')
                             a.list-group-item(href="#" data-bind='click:selectIndicator' data-content="MCP" title="Source") Protection, Assistance and Solutions
                             a.list-group-item(href="#" data-bind='click:selectIndicator' data-content="World Bank" title="Source") Disaster Readiness
                             a.list-group-item(href="#" data-bind='click:selectIndicator' data-content="test abcdef" title="Source") Migration Management
-                    .col-sm-4.col-md-4.col-sm-2.flip
-                        .card
-                          .face.front
-                            div.well.category-wrapper()
-                              span.badge 2
-                              div.well.category.icon-category-80()
-                              h4 Program Management
-                          .face.back
-                            div.list-group()
-                              a.list-group-item.active(href="#" data-bind='click:selectIndicator' data-content="MCP" title="Source") Program Management
-                              a.list-group-item(href="#" data-bind='click:selectIndicator' data-content="MCP" title="Source") Program Design and Learning
-                              a.list-group-item(href="#" data-bind='click:selectIndicator' data-content="MCP" title="Source") Administration and Oversight
-                    .col-sm-4.col-md-4.col-sm-2.flip
-                        .card
-                          .face.front
-                            div.well.category-wrapper()
-                              span.badge 4
-                              div.well.category.icon-category-20()
-                              h4 Democracy, Human Rights, and Governance
-                          .face.back
-                            div.list-group()
-                              a.list-group-item.active(href="#") Democracy, Human Rights, and Governance
-                              a.list-group-item(href="#" data-bind='click:selectIndicator' data-content="MCP" title="Source") Rule of Law and Human Rights
-                              a.list-group-item(href="#" data-bind='click:selectIndicator' data-content="MCP" title="Source") Good Governance
-                              a.list-group-item(href="#" data-bind='click:selectIndicator' data-content="MCP" title="Source") Political Competition and Consensus-Building
-                              a.list-group-item(href="#" data-bind='click:selectIndicator' data-content="MCP" title="Source") Civil Society
-                  .row
-                    .col-sm-4.col-md-4.col-sm-2.flip
-                        .card
-                          .face.front
-                            div.well.category-wrapper()
-                              span.badge 8
-                              div.well.category.icon-category-50()
-                              h4 Economic Development
-                          .face.back
-                            div.list-group()
-                              a.list-group-item.active(href="#") Economic Development
-                              a.list-group-item(href="#" data-bind='click:selectIndicator' data-content="MCP" title="Source") Macroeconomic Foundation for Growth
-                              a.list-group-item(href="#" data-bind='click:selectIndicator' data-content="MCP" title="Source") Trade and Investment
-                              a.list-group-item(href="#" data-bind='click:selectIndicator' data-content="MCP" title="Source") Financial Sector
-                              a.list-group-item(href="#" data-bind='click:selectIndicator' data-content="MCP" title="Source") Infrastructure
-                              a.list-group-item(href="#" data-bind='click:selectIndicator' data-content="MCP" title="Source") Agriculture
-                              a.list-group-item(href="#" data-bind='click:selectIndicator' data-content="MCP" title="Source") Private Sector Competitiveness
-                              a.list-group-item(href="#" data-bind='click:selectIndicator' data-content="MCP" title="Source") Economic Opportunity
-                              a.list-group-item(href="#" data-bind='click:selectIndicator' data-content="MCP" title="Source") Environment
-                    .col-sm-4.col-md-4.col-sm-2.flip
-                        .card
-                          .face.front
-                            div.well.category-wrapper()
-                              span.badge 2
-                              div.well.category.icon-category-40()
-                              h4 Education and Social Services
-                          .face.back
-                            div.list-group()
-                              a.list-group-item.active(href="#") Education and Social Services
-                              a.list-group-item(href="#" data-bind='click:selectIndicator' data-content="MCP" title="Source") Basic Education
-                              a.list-group-item(href="#" data-bind='click:selectIndicator' data-content="MCP" title="Source") Higher Education
-                    .col-sm-4.col-md-4.col-sm-2.flip
-                        .card
-                          .face.front
-                            div.well.category-wrapper()
-                              span.badge 9
-                              div.well.category.icon-category-30()
-                              h4 Health
-                          .face.back
-                            div.list-group()
-                              a.list-group-item.active(href="#") Health
-                              a.list-group-item(href="#" data-bind='click:selectIndicator' data-content="MCP" title="Source") HIV/AIDS
-                              a.list-group-item(href="#" data-bind='click:selectIndicator' data-content="MCP" title="Source") Tuberculosis
-                              a.list-group-item(href="#" data-bind='click:selectIndicator' data-content="MCP" title="Source") Malaria
-                              a.list-group-item(href="#" data-bind='click:selectIndicator' data-content="MCP" title="Source") Pandemic Influenza
-                              a.list-group-item(href="#" data-bind='click:selectIndicator' data-content="MCP" title="Source") Other Public Health Threats
-                              a.list-group-item(href="#" data-bind='click:selectIndicator' data-content="MCP" title="Source") Maternal and Child Health
-                              a.list-group-item(href="#" data-bind='click:selectIndicator' data-content="MCP" title="Source") Family Planning and Reproductive Health
-                              a.list-group-item(href="#" data-bind='click:selectIndicator' data-content="MCP" title="Source") Water Supply and Sanitation
-                              a.list-group-item(href="#" data-bind='click:selectIndicator' data-content="MCP" title="Source") Nutrition                        
-                  .row
-                    .col-sm-4.col-md-4.col-sm-2.flip
-                      .card
-                        .face.front
-                          div.well.category-wrapper()
-                            span.badge 4
-                            div.well.category.icon-category-90()
-                            h4 Multi-Sector
-                        .face.back
-                          div.list-group()
-                            a.list-group-item.active(href="#") Multi-Sector
-                            a.list-group-item(href="#" data-bind='click:selectIndicator' data-content="MCP" title="Source") Indicator 1
-                            a.list-group-item(href="#" data-bind='click:selectIndicator' data-content="MCP" title="Source") Indicator 2
-                            a.list-group-item(href="#" data-bind='click:selectIndicator' data-content="MCP" title="Source") Indicator 3
-                            a.list-group-item(href="#" data-bind='click:selectIndicator' data-content="MCP" title="Source") Indicator 4
-                    .col-sm-4.col-md-4.col-sm-2.flip
-                      .card
-                        .face.front
-                          div.well.category-wrapper()
-                            span.badge 6
-                            div.well.category.icon-category-60()
-                            h4 Environment
-                        .face.back
-                          div.list-group()
-                            a.list-group-item.active(href="#") Environment
-                            a.list-group-item(href="#" data-bind='click:selectIndicator' data-content="MCP" title="Source") Counter-Terrorism
-                            a.list-group-item(href="#" data-bind='click:selectIndicator' data-content="MCP" title="Source") Combating Weapons of Mass Destruction (WMD)
-                            a.list-group-item(href="#" data-bind='click:selectIndicator' data-content="MCP" title="Source") Stabilization Operations and Security Sector Reform
-                            a.list-group-item(href="#" data-bind='click:selectIndicator' data-content="MCP" title="Source") Counter-Narcotic
-                            a.list-group-item(href="#" data-bind='click:selectIndicator' data-content="MCP" title="Source") Transnational Crime
-                            a.list-group-item(href="#" data-bind='click:selectIndicator' data-content="MCP" title="Source") Conflict Mitigation and Reconciliation
-                            a.list-group-item(href="#" data-bind='click:selectIndicator' data-content="MCP" title="Source") Counter-Terrorism
-                            a.list-group-item(href="#" data-bind='click:selectIndicator' data-content="MCP" title="Source") Combating Weapons of Mass Destruction (WMD)
-                            a.list-group-item(href="#" data-bind='click:selectIndicator' data-content="MCP" title="Source") Stabilization Operations and Security Sector Reform
-                            a.list-group-item(href="#" data-bind='click:selectIndicator' data-content="MCP" title="Source") Counter-Narcotic
-                            a.list-group-item(href="#" data-bind='click:selectIndicator' data-content="MCP" title="Source") Transnational Crime
-                            a.list-group-item(href="#" data-bind='click:selectIndicator' data-content="MCP" title="Source") Conflict Mitigation and Reconciliation
-
-                    .col-sm-4.col-md-4.col-sm-2.flip
-                      .card
-                        .face.front
-                          div.well.category-wrapper()
-                            span.badge 6
-                            div.well.category.icon-category-10()
-                            h4 Peace & Security
-                        .face.back
-                          div.list-group()
-                            a.list-group-item.active(href="#") Peace & Security
-                            a.list-group-item(href="#" data-bind='click:selectIndicator' data-content="MCP" title="Source") Counter-Terrorism
-                            a.list-group-item(href="#" data-bind='click:selectIndicator' data-content="MCP" title="Source") Combating Weapons of Mass Destruction (WMD)
-                            a.list-group-item(href="#" data-bind='click:selectIndicator' data-content="MCP" title="Source") Stabilization Operations and Security Sector Reform
-                            a.list-group-item(href="#" data-bind='click:selectIndicator' data-content="MCP" title="Source") Counter-Narcotic
-                            a.list-group-item(href="#" data-bind='click:selectIndicator' data-content="MCP" title="Source") Transnational Crime
-                            a.list-group-item(href="#" data-bind='click:selectIndicator' data-content="MCP" title="Source") Conflict Mitigation and Reconciliation
                 
                 //- BY SOURCE
                 #by-source.tab-pane(role='tabpanel')
@@ -401,15 +285,13 @@ html(lang='en')
       include ./includes/footer.jade
 link(href='//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css', rel='stylesheet')
 
-//-script(src='bower_components/jquery-ui/jquery-ui.js')
+script(src='bower_components/jquery-ui/jquery-ui.js')
 script(src='bower_components/lodash/lodash.min.js')
-
-//-script(src='bower_components/knockout/dist/knockout.js')
-//-script(src='app/js/lib/jquery.bootstrap.wizard.min.js')
-//-script(src='app/js/visualization/loader.js')
-script(src='app/js/visualization/visualization-bundle.js')
 script(src='//code.highcharts.com/highcharts.js')
 script(src='//code.highcharts.com/modules/exporting.js')
-
+script(src='bower_components/knockout/dist/knockout.js')  
+script(src='app/js/visualization/config.js')
+script(src='app/js/visualization/loader.js')
+script(src='app/js/visualization/visualization.js')
 
 

@@ -1,18 +1,15 @@
-window.$ = window.jQuery = require("jquery");
+(function() {
 
-module.exports = function() {
-    var o = {};
+    window.loadIndicatorList = function(url, handlerFunc) {
 
-    o.loadIndicatorList = function(url, handlerFunc) {
-
-        url = "data/indicators.json";
+        url = "data/indicators2.json";
 
         $.get(url, function(data) {
             handlerFunc(data);
         });
     }
 
-    o.loadIndicatorData = function(url, handlerFunc) {
+    window.loadIndicatorData = function(url, handlerFunc) {
         url = "data/access-to-improved.json";
 
         $.get(url, function(data) {
@@ -20,5 +17,6 @@ module.exports = function() {
         });
     }
 
-    return o;
-}
+
+
+}())
