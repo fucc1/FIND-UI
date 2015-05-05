@@ -49,7 +49,27 @@ html(lang='en')
                 //- BY CATEGORY
                 #by-category.tab-pane.active(role='tabpanel')                  
                   .row
-                    p
+                    .col-md-12
+                      .tabbable.tabs-left
+                        ul.nav.nav-tabs
+                          li
+                            a(href='#a', data-toggle='tab') One
+                          li.active
+                            a(href='#b', data-toggle='tab') Two        
+                          li
+                            a(href='#c', data-toggle='tab') Twee
+                        .tab-content
+                          #a.tab-pane.active
+                            | Lorem ipsum dolor sit amet, charetra varius quam sit amet vulputate.
+                            | Quisque mauris augue, molestie tincidunt condimentum vitae, gravida a libero.
+                          |          
+                          #b.tab-pane
+                            | Secondo sed ac orci quis tortor imperdiet venenatis. Duis elementum auctor accumsan.
+                            | Aliquam in felis sit amet augue.
+                          |          
+                          #c.tab-pane
+                            | Thirdamuno, ipsum dolor sit amet, consectetur adipiscing elit. Duis pharetra varius quam sit amet vulputate.
+                            | Quisque mauris augue, molestie tincidunt condimentum vitae.
                   .row(data-bind="foreach:categoriesModel")
                     .col-sm-4.col-md-4.col-sm-2.flip
                       .card
