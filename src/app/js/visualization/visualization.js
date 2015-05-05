@@ -108,35 +108,35 @@
 
         },
 
-        showView: function(code) {
+        // showView: function(code) {
 
 
-            $('#btn-primary').removeClass('active');
-            $('#by-category').removeClass('active');
-            $('#by-source').removeClass('active');
-            $('#all-indicators').removeClass('active');
-            switch (code) {
+        //     $('#btn-primary').removeClass('active');
+        //     $('#by-category').removeClass('active');
+        //     $('#by-source').removeClass('active');
+        //     $('#all-indicators').removeClass('active');
+        //     switch (code) {
 
-                case "category":
-                    $('#btn-category').addClass('active');
-                    $('#by-category').addClass('active');
-                    break;
+        //         case "category":
+        //             $('#btn-category').addClass('active');
+        //             $('#by-category').addClass('active');
+        //             break;
 
-                case "sources":
-                    $('#btn-source').addClass('active');
-                    $('#by-source').addClass('active');
-                    break;
+        //         case "sources":
+        //             $('#btn-source').addClass('active');
+        //             $('#by-source').addClass('active');
+        //             break;
 
-                case "alphabetic":
-                    $('#btn-alphabetic').addClass('active');
-                    $('#all-indicators').addClass('active');
-                    break;
+        //         case "alphabetic":
+        //             $('#btn-alphabetic').addClass('active');
+        //             $('#all-indicators').addClass('active');
+        //             break;
 
-            }
+        //     }
 
 
 
-        },
+        // },
 
         selectionTracker: ko.observable({
 

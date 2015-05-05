@@ -58,23 +58,8 @@
         <div class="col-md-12">
           <div role="tabpanel">
             <ul id="vizTabs" role="tablist" class="nav nav-tabs nav-justified">                                
-              <li role="presentation" class="active dropdown"><a href="#by-category" aria-controls="by-category" role="tab" data-toggle="tab">
-                  <h4><span data-bind="visible:!selectionTracker().indicator">1. Select Indicator</span><span data-bind="html:activeIndicator,visible:selectionTracker().indicator" class="selected-tab-value"></span><span data-bind="click:clearIndicator,visible:selectionTracker().indicator" class="glyphicon glyphicon-remove"></span></h4>
-                  <div class="row">
-                    <div class="col-md-12 col-sm-12 col-lg-12">
-                      <div data-toggle="buttons" class="btn-group">
-                        <label data-bind="click:function(){showView('category')}" class="btn btn-primary btn-category active">
-                          <input id="by-category-radio" type="radio" name="options" autocomplete="off"> By Category
-                        </label>
-                        <label data-bind="click:function(){showView('source')}" class="btn btn-primary btn-source">
-                          <input id="by-alpha-radio" type="radio" name="options" autocomplete="off" checked="true"> By Source
-                        </label>
-                        <label data-bind="click:function(){showView('alphabetic')}" class="btn btn-primary btn-alphabetic">
-                          <input id="by-alpha-radio" type="radio" name="options" autocomplete="off" checked="true"> A - Z
-                        </label>
-                      </div>
-                    </div>
-                  </div></a></li>
+              <li role="presentation" class="active"><a href="#select-indicator" aria-controls="vizualize" role="tab" data-toggle="tab">
+                  <h4><span data-bind="visible:!selectionTracker().indicator">1. Select Indicator</span><span data-bind="html:activeIndicator,visible:selectionTracker().indicator" class="selected-tab-value"></span><span data-bind="click:clearIndicator,visible:selectionTracker().indicator" class="glyphicon glyphicon-remove"></span></h4></a></li>
               <li role="presentation"><a href="#select-vizualization" aria-controls="select-vizualization" role="tab" data-toggle="tab">
                   <h4><span data-bind="visible:!selectionTracker().vizualization">2. Choose Vizualization</span><span data-bind="html:activeChart,visible:selectionTracker().vizualization" class="selected-tab-value"></span><span data-bind="click:clearChart,visible:selectionTracker().vizualization" class="glyphicon glyphicon-remove"></span></h4></a></li>
               <li role="presentation" class="disabled"><a href="#vizualize" aria-controls="vizualize" role="tab" data-toggle="tab">
@@ -87,76 +72,72 @@
               <div class="row">
                 <p></p>
               </div>
-              <div id="by-category" role="tabpanel" class="tab-pane active">                 
+              <div id="select-indicator" role="tabpanel" class="tab-pane active">                 
                 <div class="row">
-                  <div class="col-md-12">
+                  <div class="col-md-1">
                     <div class="tabbable tabs-left">
                       <ul class="nav nav-tabs">
-                        <li><a href="#a" data-toggle="tab">One</a></li>
-                        <li class="active"><a href="#b" data-toggle="tab">Two        </a></li>
-                        <li><a href="#c" data-toggle="tab">Twee</a></li>
+                        <li class="active"><a href="#a" data-toggle="tab">Category</a></li>
+                        <li><a href="#b" data-toggle="tab">Sources        </a></li>
+                        <li><a href="#c" data-toggle="tab">A - Z</a></li>
                       </ul>
-                      <div class="tab-content">
-                        <div id="a" class="tab-pane active">
-                          Lorem ipsum dolor sit amet, charetra varius quam sit amet vulputate.
-                          Quisque mauris augue, molestie tincidunt condimentum vitae, gravida a libero.
-                        </div>         
-                        <div id="b" class="tab-pane">
-                          Secondo sed ac orci quis tortor imperdiet venenatis. Duis elementum auctor accumsan.
-                          Aliquam in felis sit amet augue.
-                        </div>         
-                        <div id="c" class="tab-pane">
-                          Thirdamuno, ipsum dolor sit amet, consectetur adipiscing elit. Duis pharetra varius quam sit amet vulputate.
-                          Quisque mauris augue, molestie tincidunt condimentum vitae.
-                        </div>
-                      </div>
                     </div>
                   </div>
-                </div>
-                <div data-bind="foreach:categoriesModel" class="row">
-                  <div class="col-sm-4 col-md-4 col-sm-2 flip">
-                    <div class="card">
-                      <div class="face front">
-                        <div class="well category-wrapper"><span data-bind="html:length" class="badge"></span>
-                          <div data-bind="attr:{class:'icon-category-' + label.replace(&quot; &quot;,&quot;-&quot;).toLowerCase() + ' well category'}"></div>
-                          <h4 data-bind="html:label"></h4>
+                  <div class="col-md-11">
+                    <div class="tab-content">
+                      <div id="a" class="tab-pane active">
+                        <div data-bind="foreach:categoriesModel" class="row">
+                          <div class="col-sm-4 col-md-4 col-sm-2 flip">
+                            <div class="card">
+                              <div class="face front">
+                                <div class="well category-wrapper"><span data-bind="html:length" class="badge"></span>
+                                  <div data-bind="attr:{class:'icon-category-' + label.replace(&quot; &quot;,&quot;-&quot;).toLowerCase() + ' well category'}"></div>
+                                  <h4 data-bind="html:label"></h4>
+                                </div>
+                              </div>
+                              <div class="face back">
+                                <div class="list-group"><a href="#" data-bind="html:label" class="list-group-item active"></a><span data-bind="foreach:indicators"><a href="#" data-bind="click:$root.selectIndicator,html:label,attr:{&quot;data-content&quot;:&quot;&lt;strong&gt;Source : &lt;/strong&gt;&quot; + source}" data-html="true" class="list-group-item">                             </a></span></div>
+                              </div>
+                            </div>
+                          </div>
                         </div>
                       </div>
-                      <div class="face back">
-                        <div class="list-group"><a href="#" data-bind="html:label" class="list-group-item active"></a><span data-bind="foreach:indicators"><a href="#" data-bind="click:$root.selectIndicator,html:label,attr:{&quot;data-content&quot;:&quot;&lt;strong&gt;Source : &lt;/strong&gt;&quot; + source}" data-html="true" class="list-group-item">                             </a></span></div>
+                      <div id="b" class="tab-pane">
+                        <div data-bind="foreach:sourcesModel" class="row">
+                          <div class="col-sm-4 col-md-4 flip">
+                            <div class="card">
+                              <div class="face front">
+                                <div class="well category-wrapper"><span data-bind="html:length" class="badge"></span>
+                                  <div class="well category icon-category-70"></div>
+                                  <h4 data-bind="html:label"></h4>
+                                </div>
+                              </div>
+                              <div class="face back">
+                                <div class="list-group"><a href="#" data-bind="html:label" class="list-group-item active"></a><span data-bind="foreach:indicators"><a href="#" data-bind="click:$root.selectIndicator,html:label,attr:{&quot;data-content&quot;:&quot;&lt;strong&gt;Category : &lt;/strong&gt;&quot; + category}" data-html="true" class="list-group-item"></a></span></div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div id="c" class="tab-pane">
+                        <div class="row">
+                          <div class="col-md-12">
+                            <input data-bind="event:{keyup:filterIndicators}" placeHolder="Filter" class="pull-right">
+                          </div>
+                        </div>
+                        <div data-bind="foreach:indicatorsModel" class="list-group row"><a href="#" data-bind="click:$root.selectIndicator,html:label,attr:{&quot;data-content&quot;:&quot;&lt;strong&gt;Category : &lt;/strong&gt;&quot; + category + &quot;&lt;br&gt;&lt;strong&gt;Source : &lt;/strong&gt;&quot; + source,&quot;data-indicatorid&quot;:id}" data-html="true" class="list-group-item col-md-4"></a></div>
                       </div>
                     </div>
                   </div>
                 </div>
               </div>
+              <div id="by-category" role="tabpanel" class="tab-pane active">                 </div>
               <div id="by-source" role="tabpanel" class="tab-pane">
                 <div class="row">
                   <p></p>
                 </div>
-                <div data-bind="foreach:sourcesModel" class="row">
-                  <div class="col-sm-4 col-md-4 flip">
-                    <div class="card">
-                      <div class="face front">
-                        <div class="well category-wrapper"><span data-bind="html:length" class="badge"></span>
-                          <div class="well category icon-category-70"></div>
-                          <h4 data-bind="html:label"></h4>
-                        </div>
-                      </div>
-                      <div class="face back">
-                        <div class="list-group"><a href="#" data-bind="html:label" class="list-group-item active"></a><span data-bind="foreach:indicators"><a href="#" data-bind="click:$root.selectIndicator,html:label,attr:{&quot;data-content&quot;:&quot;&lt;strong&gt;Category : &lt;/strong&gt;&quot; + category}" data-html="true" class="list-group-item"></a></span></div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
               </div>
-              <div id="all-indicators" role="tabpanel" class="tab-pane">
-                <div class="row">
-                  <div class="col-md-12">
-                    <input data-bind="event:{keyup:filterIndicators}" placeHolder="Filter" class="pull-right">
-                  </div>
-                </div>
-                <div data-bind="foreach:indicatorsModel" class="list-group row"><a href="#" data-bind="click:$root.selectIndicator,html:label,attr:{&quot;data-content&quot;:&quot;&lt;strong&gt;Category : &lt;/strong&gt;&quot; + category + &quot;&lt;br&gt;&lt;strong&gt;Source : &lt;/strong&gt;&quot; + source,&quot;data-indicatorid&quot;:id}" data-html="true" class="list-group-item col-md-4"></a></div>
-              </div>
+              <div id="all-indicators" role="tabpanel" class="tab-pane"></div>
               <div id="select-vizualization" role="tabpanel" class="tab-pane">
                 <div class="row">
                   <div class="col-sm-4 col-md-4">

@@ -13,24 +13,30 @@ html(lang='en')
         .col-md-12
           div(role='tabpanel')
               ul#vizTabs.nav.nav-tabs.nav-justified(role='tablist')                                 
-                li.active.dropdown(role='presentation')
-                  a(href='#by-category', aria-controls='by-category', role='tab', data-toggle='tab')
+                //- li(role='presentation')
+                //-   a(href='#by-category', aria-controls='by-category', role='tab', data-toggle='tab')
+                //-     h4
+                //-       span(data-bind="visible:!selectionTracker().indicator") 1. Select Indicator
+                //-       span.selected-tab-value(data-bind="html:activeIndicator,visible:selectionTracker().indicator")
+                //-       span.glyphicon.glyphicon-remove(data-bind="click:clearIndicator,visible:selectionTracker().indicator")
+                //-     .row
+                //-       .col-md-12.col-sm-12.col-lg-12
+                //-         div.btn-group(data-toggle='buttons')
+                //-           label.btn.btn-primary.btn-category.active(data-bind="click:function(){showView('category')}")
+                //-             input#by-category-radio(type='radio', name='options', autocomplete='off')
+                //-             |  By Category
+                //-           label.btn.btn-primary.btn-source(data-bind="click:function(){showView('source')}")
+                //-             input#by-alpha-radio(type='radio', name='options', autocomplete='off', checked='true')
+                //-             |  By Source
+                //-           label.btn.btn-primary.btn-alphabetic(data-bind="click:function(){showView('alphabetic')}")
+                //-             input#by-alpha-radio(type='radio', name='options', autocomplete='off', checked='true')
+                //-             |  A - Z
+                li.active(role='presentation')
+                  a(href='#select-indicator', aria-controls='vizualize', role='tab', data-toggle='tab')
                     h4
                       span(data-bind="visible:!selectionTracker().indicator") 1. Select Indicator
                       span.selected-tab-value(data-bind="html:activeIndicator,visible:selectionTracker().indicator")
                       span.glyphicon.glyphicon-remove(data-bind="click:clearIndicator,visible:selectionTracker().indicator")
-                    .row
-                      .col-md-12.col-sm-12.col-lg-12
-                        div.btn-group(data-toggle='buttons')
-                          label.btn.btn-primary.btn-category.active(data-bind="click:function(){showView('category')}")
-                            input#by-category-radio(type='radio', name='options', autocomplete='off')
-                            |  By Category
-                          label.btn.btn-primary.btn-source(data-bind="click:function(){showView('source')}")
-                            input#by-alpha-radio(type='radio', name='options', autocomplete='off', checked='true')
-                            |  By Source
-                          label.btn.btn-primary.btn-alphabetic(data-bind="click:function(){showView('alphabetic')}")
-                            input#by-alpha-radio(type='radio', name='options', autocomplete='off', checked='true')
-                            |  A - Z
                 li(role='presentation')
                   a(href='#select-vizualization', aria-controls='select-vizualization', role='tab', data-toggle='tab')
                     h4
@@ -46,113 +52,114 @@ html(lang='en')
                   p
                 .row
                   p
-                //- BY CATEGORY
-                #by-category.tab-pane.active(role='tabpanel')                  
+                //- BY TEST
+                #select-indicator.tab-pane.active(role='tabpanel')                  
                   .row
-                    .col-md-12
+                    .col-md-1
                       .tabbable.tabs-left
                         ul.nav.nav-tabs
-                          li
-                            a(href='#a', data-toggle='tab') One
                           li.active
-                            a(href='#b', data-toggle='tab') Two        
+                            a(href='#a', data-toggle='tab') Category
                           li
-                            a(href='#c', data-toggle='tab') Twee
+                            a(href='#b', data-toggle='tab') Sources        
+                          li
+                            a(href='#c', data-toggle='tab') A - Z
+                    .col-md-11
                         .tab-content
                           #a.tab-pane.active
-                            | Lorem ipsum dolor sit amet, charetra varius quam sit amet vulputate.
-                            | Quisque mauris augue, molestie tincidunt condimentum vitae, gravida a libero.
-                          |          
+                            .row(data-bind="foreach:categoriesModel")
+                              .col-sm-4.col-md-4.col-sm-2.flip
+                                .card
+                                  .face.front
+                                    div.well.category-wrapper()
+                                      span.badge(data-bind="html:length")
+                                      div(data-bind="attr:{class:'icon-category-' + label.replace(\" \",\"-\").toLowerCase() + ' well category'}")
+                                      h4(data-bind="html:label")
+                                  .face.back
+                                    div.list-group()
+                                      a.list-group-item.active(href="#" data-bind="html:label")
+                                      span(data-bind="foreach:indicators")
+                                        a.list-group-item(href="#" data-bind='click:$root.selectIndicator,html:label,attr:{"data-content":"<strong>Source : </strong>" + source}' data-html="true")                              
+                            //- .row
+                            //-   .col-sm-4.col-md-4.col-sm-2.flip
+                            //-     .card
+                            //-       .face.front
+                            //-         div.well.category-wrapper()
+                            //-           span.badge 3
+                            //-           div.well.category.icon-category-70()
+                            //-           h4 Human Assistance
+                            //-       .face.back
+                            //-         div.list-group()
+                            //-           a.list-group-item.active(href="#") Human Assistance
+                            //-           .panel-group(role='tablist')
+                            //-             .panel.panel-default
+                            //-                 .panel-heading(data-bind='click:expandCategory' role='tab', data-toggle='collapse', href='#collapseListGroup1', aria-expanded='false')
+                            //-                   h4.panel-title()
+                            //-                     a Sub Catergory
+                            //-                     span.pull-right.glyphicon.glyphicon-circle-arrow-right()
+                            //-                     span.pull-right.glyphicon.glyphicon-circle-arrow-down()
+                            //-                 #collapseListGroup1.panel-collapse.collapse(role='tabpanel', aria-expanded='false')
+                            //-                   ul.list-group
+                            //-                     li.list-group-item 
+                            //-                       a(href="#" data-bind='click:selectIndicator' data-content="MCP" title="Source") Indicator 1
+                            //-                     |           
+                            //-                     li.list-group-item
+                            //-                       a(href="#" data-bind='click:selectIndicator' data-content="MCP" title="Source") Indicator B
+                            //-                     |           
+                            //-                     li.list-group-item
+                            //-                       a(href="#" data-bind='click:selectIndicator' data-content="MCP" title="Source") Indicator III
+                            //-           a.list-group-item(href="#" data-bind='click:selectIndicator' data-content="MCP" title="Source") Protection, Assistance and Solutions
+                            //-           a.list-group-item(href="#" data-bind='click:selectIndicator' data-content="World Bank" title="Source") Disaster Readiness
+                            //-           a.list-group-item(href="#" data-bind='click:selectIndicator' data-content="test abcdef" title="Source") Migration Management
+                                 
                           #b.tab-pane
-                            | Secondo sed ac orci quis tortor imperdiet venenatis. Duis elementum auctor accumsan.
-                            | Aliquam in felis sit amet augue.
-                          |          
+                            .row(data-bind="foreach:sourcesModel")
+                              .col-sm-4.col-md-4.flip
+                                .card
+                                  .face.front
+                                    div.well.category-wrapper()
+                                      span.badge(data-bind="html:length")
+                                      div.well.category.icon-category-70()
+                                      h4(data-bind="html:label")
+                                  .face.back
+                                    div.list-group()
+                                      a.list-group-item.active(href="#" data-bind="html:label")
+                                      span(data-bind="foreach:indicators")
+                                        a.list-group-item(href="#" data-bind='click:$root.selectIndicator,html:label,attr:{"data-content":"<strong>Category : </strong>" + category}'  data-html="true")
+                              //- .col-sm-4.col-md-4.flip
+                              //-     .card
+                              //-       .face.front
+                              //-         div.well.category-wrapper()
+                              //-           span.badge 2
+                              //-           div.well.category.icon-category-80()
+                              //-           h4 UNCP
+                              //-       .face.back
+                              //-         div.list-group()
+                              //-           a.list-group-item.active(href="#" data-bind='click:selectIndicator' data-content="MCP" title="Source") Program Management
+                              //-           a.list-group-item(href="#" data-bind='click:selectIndicator' data-content="MCP" title="Source") Program Design and Learning
+                              //-           a.list-group-item(href="#" data-bind='click:selectIndicator' data-content="MCP" title="Source") Administration and Oversight        
                           #c.tab-pane
-                            | Thirdamuno, ipsum dolor sit amet, consectetur adipiscing elit. Duis pharetra varius quam sit amet vulputate.
-                            | Quisque mauris augue, molestie tincidunt condimentum vitae.
-                  .row(data-bind="foreach:categoriesModel")
-                    .col-sm-4.col-md-4.col-sm-2.flip
-                      .card
-                        .face.front
-                          div.well.category-wrapper()
-                            span.badge(data-bind="html:length")
-                            div(data-bind="attr:{class:'icon-category-' + label.replace(\" \",\"-\").toLowerCase() + ' well category'}")
-                            h4(data-bind="html:label")
-                        .face.back
-                          div.list-group()
-                            a.list-group-item.active(href="#" data-bind="html:label")
-                            span(data-bind="foreach:indicators")
-                              a.list-group-item(href="#" data-bind='click:$root.selectIndicator,html:label,attr:{"data-content":"<strong>Source : </strong>" + source}' data-html="true")                              
-                  //- .row
-                  //-   .col-sm-4.col-md-4.col-sm-2.flip
-                  //-     .card
-                  //-       .face.front
-                  //-         div.well.category-wrapper()
-                  //-           span.badge 3
-                  //-           div.well.category.icon-category-70()
-                  //-           h4 Human Assistance
-                  //-       .face.back
-                  //-         div.list-group()
-                  //-           a.list-group-item.active(href="#") Human Assistance
-                  //-           .panel-group(role='tablist')
-                  //-             .panel.panel-default
-                  //-                 .panel-heading(data-bind='click:expandCategory' role='tab', data-toggle='collapse', href='#collapseListGroup1', aria-expanded='false')
-                  //-                   h4.panel-title()
-                  //-                     a Sub Catergory
-                  //-                     span.pull-right.glyphicon.glyphicon-circle-arrow-right()
-                  //-                     span.pull-right.glyphicon.glyphicon-circle-arrow-down()
-                  //-                 #collapseListGroup1.panel-collapse.collapse(role='tabpanel', aria-expanded='false')
-                  //-                   ul.list-group
-                  //-                     li.list-group-item 
-                  //-                       a(href="#" data-bind='click:selectIndicator' data-content="MCP" title="Source") Indicator 1
-                  //-                     |           
-                  //-                     li.list-group-item
-                  //-                       a(href="#" data-bind='click:selectIndicator' data-content="MCP" title="Source") Indicator B
-                  //-                     |           
-                  //-                     li.list-group-item
-                  //-                       a(href="#" data-bind='click:selectIndicator' data-content="MCP" title="Source") Indicator III
-                  //-           a.list-group-item(href="#" data-bind='click:selectIndicator' data-content="MCP" title="Source") Protection, Assistance and Solutions
-                  //-           a.list-group-item(href="#" data-bind='click:selectIndicator' data-content="World Bank" title="Source") Disaster Readiness
-                  //-           a.list-group-item(href="#" data-bind='click:selectIndicator' data-content="test abcdef" title="Source") Migration Management
+                            .row
+                              .col-md-12
+                                input.pull-right(data-bind="event:{keyup:filterIndicators}" placeHolder="Filter")
+                            div.list-group.row(data-bind="foreach:indicatorsModel")
+                              a.list-group-item.col-md-4(href="#" data-bind='click:$root.selectIndicator,html:label,attr:{"data-content":"<strong>Category : </strong>" + category + "<br><strong>Source : </strong>" + source,"data-indicatorid":id}' data-html="true")
+                //- BY CATEGORY
+                #by-category.tab-pane.active(role='tabpanel')                  
+                  
+                  
+                  
                 
                 //- BY SOURCE
                 #by-source.tab-pane(role='tabpanel')
                   .row
                     p
-                  .row(data-bind="foreach:sourcesModel")
-                    .col-sm-4.col-md-4.flip
-                      .card
-                        .face.front
-                          div.well.category-wrapper()
-                            span.badge(data-bind="html:length")
-                            div.well.category.icon-category-70()
-                            h4(data-bind="html:label")
-                        .face.back
-                          div.list-group()
-                            a.list-group-item.active(href="#" data-bind="html:label")
-                            span(data-bind="foreach:indicators")
-                              a.list-group-item(href="#" data-bind='click:$root.selectIndicator,html:label,attr:{"data-content":"<strong>Category : </strong>" + category}'  data-html="true")
-                    //- .col-sm-4.col-md-4.flip
-                    //-     .card
-                    //-       .face.front
-                    //-         div.well.category-wrapper()
-                    //-           span.badge 2
-                    //-           div.well.category.icon-category-80()
-                    //-           h4 UNCP
-                    //-       .face.back
-                    //-         div.list-group()
-                    //-           a.list-group-item.active(href="#" data-bind='click:selectIndicator' data-content="MCP" title="Source") Program Management
-                    //-           a.list-group-item(href="#" data-bind='click:selectIndicator' data-content="MCP" title="Source") Program Design and Learning
-                    //-           a.list-group-item(href="#" data-bind='click:selectIndicator' data-content="MCP" title="Source") Administration and Oversight
+                  
                     
 
                 //- ALL INDICTORS                 
                 #all-indicators.tab-pane(role='tabpanel')
-                  .row
-                    .col-md-12
-                      input.pull-right(data-bind="event:{keyup:filterIndicators}" placeHolder="Filter")
-                  div.list-group.row(data-bind="foreach:indicatorsModel")
-                    a.list-group-item.col-md-4(href="#" data-bind='click:$root.selectIndicator,html:label,attr:{"data-content":"<strong>Category : </strong>" + category + "<br><strong>Source : </strong>" + source,"data-indicatorid":id}' data-html="true")
+                  
 
                 //- TAB 2
                 #select-vizualization.tab-pane(role='tabpanel')
