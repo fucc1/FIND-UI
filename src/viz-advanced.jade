@@ -23,13 +23,13 @@ html(lang='en')
                       .col-md-12.col-sm-12.col-lg-12
                         div.btn-group(data-toggle='buttons')
                           label.btn.btn-primary.btn-category.active(data-bind="click:function(){showView('category')}")
-                            input#by-category-radio2(type='radio', name='options', autocomplete='off')
+                            input#by-category-radio(type='radio', name='options', autocomplete='off')
                             |  By Category
                           label.btn.btn-primary.btn-source(data-bind="click:function(){showView('source')}")
-                            input#by-alpha-radio2(type='radio', name='options', autocomplete='off', checked='true')
+                            input#by-alpha-radio(type='radio', name='options', autocomplete='off', checked='true')
                             |  By Source
                           label.btn.btn-primary.btn-alphabetic(data-bind="click:function(){showView('alphabetic')}")
-                            input#by-alpha-radio2(type='radio', name='options', autocomplete='off', checked='true')
+                            input#by-alpha-radio(type='radio', name='options', autocomplete='off', checked='true')
                             |  A - Z
                 li(role='presentation')
                   a(href='#select-vizualization', aria-controls='select-vizualization', role='tab', data-toggle='tab')
@@ -129,9 +129,10 @@ html(lang='en')
                 //- ALL INDICTORS                 
                 #all-indicators.tab-pane(role='tabpanel')
                   .row
-                    p
+                    .col-md-12
+                      input.pull-right(data-bind="event:{keyup:filterIndicators}" placeHolder="Filter")
                   div.list-group.row(data-bind="foreach:indicatorsModel")
-                    a.list-group-item.col-md-4(href="#" data-bind='click:$root.selectIndicator,html:label,attr:{"data-content":"<strong>Category : </strong>" + category + "<br><strong>Source : </strong>" + source}' data-html="true")
+                    a.list-group-item.col-md-4(href="#" data-bind='click:$root.selectIndicator,html:label,attr:{"data-content":"<strong>Category : </strong>" + category + "<br><strong>Source : </strong>" + source,"data-indicatorid":id}' data-html="true")
 
                 //- TAB 2
                 #select-vizualization.tab-pane(role='tabpanel')

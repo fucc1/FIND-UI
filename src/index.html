@@ -36,7 +36,8 @@
           <ul class="nav navbar-nav">
             <li><a href="indicators.html">INDICATORS</a></li>
             <li><a href="countries.html">COUNTRIES</a></li>
-            <li><a href="visualization.html">VISUALIZE NOW!</a></li>
+            <li><a href="viz-advanced.html">CUSTOM VISUALIZATION</a></li>
+            <li><a href="#data-stories">DATA STORIES</a></li>
           </ul>
           <ul class="nav navbar-nav navbar-right">
             <li><a href="#about">Login</a></li>
@@ -45,16 +46,18 @@
         </div>
       </div>
     </nav>
-    <div class="container">
+    <div class="container-full">
       <!-- Main component for a primary marketing message or call to action-->
       <div class="row jumbotron bg-dark">
         <p>&nbsp;</p>
-        <h1>Explore Indicators, Effortlessly</h1>
+        <h1 class="tlt">Explore Indicators, Effortlessly</h1>
+        <h1 class="tlt">Share what you discover</h1>
         <div class="row">
           <div class="col-md-2"></div>
           <div class="col-md-8">
             <p class="search-group">
-              <div class="form-group has-feedback">
+              <div id="sticky-anchor"></div>
+              <div id="sticky" class="form-group has-feedback">
                 <input type="text" placeHolder="Find a country or indicator" class="main-search"><span class="glyphicon glyphicon-search form-control-feedback"></span>
               </div>
             </p>
@@ -63,57 +66,51 @@
           <!--span.glyphicon.glyphicon-search.form-control-feedback-->
           <div class="col-md-2"></div>
         </div>
-        <p>Or browse by: <a>Country</a>, <span>or </span><a>Indicator</a>
-          <!--a.btn.btn-lg.btn-primary(href='../../components/#navbar', role='button') View navbar docs &raquo;-->
-        </p>
       </div>
+    </div>
+    <div class="container">
       <div class="row">
-        <div class="col-md-6">
-          <div class="well bg-container">
-            <h3>Welcome to FIND</h3>
+        <div class="col-md-12">
+          <div class="well bg-none font-large font-dark">
+            <div class="row">
+              <div class="col-md-12">
+                <p></p>Explore country-level indicators from a variety of sources and sectors. 
+                Visualize and compare the data to better understand the context.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row vdivide">
+        <div class="vdivide col-md-6">
+          <div class="well bg-none">
+            <h3>Literacy rates</h3>
             <div class="row">
               <div class="col-md-3"><img src="http://placehold.it/125/A64444"></div>
               <div class="col-md-9">
-                <p></p>Explore country-level indicators from a variety of sources and sectors. Visualize and compare the data to better understand the context. Share what you discover.
-                Explore country-level indicators from a variety of sources and sectors. Visualize and compare the data to better understand the context. Share what you discover.
-                Explore country-level indicators from a variety of sources and sectors. Visualize and compare the data to better understand the context. Share what you discover.
-                Explore country-level indicators from a variety of sources and sectors. Visualize and compare the data to better understand the context. Share what you discover.
-                Explore country-level indicators from a variety of sources and sectors. Visualize and compare the data to better understand the context. Share what you discover.
-                Explore country-level indicators from a variety of sources and sectors.<br><br>
+                <p>Literacy rates are up 33 percent worldwide in the last 25 years, and primary school enrollment has tripled in that period.</p>
               </div>
             </div>
           </div>
         </div>
-        <div class="col-md-6">
-          <div class="row">
-            <div class="col-md-12">
-              <div class="well bg-container">
-                <h3>Literacy rates</h3>
-                <div class="row">
-                  <div class="col-md-3"><img src="http://placehold.it/125/A64444"></div>
-                  <div class="col-md-9">
-                    <p>Literacy rates are up 33 percent worldwide in the last 25 years, and primary school enrollment has tripled in that period.</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-md-12">
-              <div class="well bg-container">
-                <h3>Infant and Child Death Rates</h3>
-                <div class="row">
-                  <div class="col-md-3"><img src="http://placehold.it/125/A64444"></div>
-                  <div class="col-md-9">
-                    <p>In the past 50 years, infant and child death rates in the developing world have been reduced by 50 percent, and health conditions around the world have improved more during this period than in all previous human history.</p>
-                  </div>
-                </div>
+        <div class="vdivide col-md-6">
+          <div class="well bg-none">
+            <h3>Infant and Child Death Rates</h3>
+            <div class="row">
+              <div class="col-md-3"><img src="http://placehold.it/125/A64444"></div>
+              <div class="col-md-9">
+                <p>In the past 50 years, infant and child death rates in the developing world have been reduced by 50 percent, and health conditions around the world have improved more during this period than in all previous human history.</p>
               </div>
             </div>
           </div>
         </div>
       </div>
-      <div class="row bg-medium footer">
+    </div>
+    <div class="container">
+      <p></p>
+    </div>
+    <div class="container-full">
+      <div id="data-stories" class="row bg-medium footer">
         <div class="well bg-medium font-light">
           <h1>Data Stories</h1>
           <div class="col-md-4 font-dark">
@@ -227,3 +224,6 @@
     </div>
   </body>
 </html>
+<script src="bower_components/letteringjs/jquery.lettering.js"></script>
+<script src="bower_components/textillate/jquery.textillate.js"></script>
+<script src="app/js/common.js"></script>

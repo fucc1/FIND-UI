@@ -105,6 +105,12 @@ html, body
 .app .bg-container
 	background-color $bgContainer
 	
+.app .font-large
+	font-size $sizeBrand
+	
+.app .bg-none
+	background none
+	
 .app .map-bg
 	background url(../images/map.png) center center no-repeat
 	
@@ -132,15 +138,18 @@ html, body
 		height 68px
 		line-height 60px
 		font-size 34px
+		left 0
 		
 	.main-search
 		width 100%
 		padding 6px
+		padding-left 60px
 		font-size 34px
 		font-weight $weightLight
 		font-style normal
-		border-radius $radius5
-		border none
+		border-radius $radius0
+		border 1px solid $bgDark
+		
 		
 
 		
@@ -193,7 +202,24 @@ html, body
 	border 1px solid $bgDark
 
 
-
+.row.vdivide [class*='vdivide col-']:not(:last-child):after
+	background #e0e0e0
+	width 1px
+	content ""
+	display block
+	position absolute
+	top 0
+	bottom 0
+	right 0
+	min-height 70px
+	
+	
+#sticky.stick
+	position fixed
+	top 60px
+	z-index 10000
+	border-radius 0 0 0.5em 0.5em
+	min-width 50%
 	
 		
 /****** MEDIA QUERIES ************/
@@ -226,6 +252,7 @@ html, body
 /*categories*/
 @import "categories.styl"
 @import "countries.styl"
+@import "fixes.styl"
 
 /*App Stylus*/	
 //@import "../js/components/app/appStyle.styl"

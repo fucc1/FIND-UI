@@ -122,7 +122,7 @@
                     $('#by-category').addClass('active');
                     break;
 
-                case "source":
+                case "sources":
                     $('#btn-source').addClass('active');
                     $('#by-source').addClass('active');
                     break;
@@ -145,6 +145,25 @@
 
         }),
 
+        filterIndicators: function(m, evt) {
+            var charCode = evt.charCode;
+            var value = evt.currentTarget.value;
+
+            var indicators = model.indicatorsModelMaster();
+            model.indicatorsModel.removeAll();
+            //model.newSearch(false);
+
+            for (var x in indicators) {
+
+                if (indicators[x].label.toLowerCase().indexOf(value.toLowerCase()) >= 0) {
+                    model.indicatorsModel.push(indicators[x]);
+                }
+            }
+
+            return true;
+
+        },
+
         activeIndicator: ko.observable(""),
 
         activeChart: ko.observable(""),
@@ -153,7 +172,11 @@
 
         sourcesModel: ko.observableArray([]),
 
-        indicatorsModel: ko.observableArray([])
+        indicatorsModel: ko.observableArray([]),
+
+        indicatorsModelMaster: ko.observableArray([]),
+
+        newSearch: ko.observable(true)
 
 
     }
@@ -232,16 +255,19 @@
 
             newIndicator.source = _.get(sourcesAll, 'data[sourceId].label');
             newIndicator.category = _.get(categoriesAll, 'data[categoryId].label');
-            newIndicator.popup = newIndicator.source + "<br>" + newIndicator.category;
+            newIndicator.id = ind;
+            //newIndicator.popup = newIndicator.source + "<br>" + newIndicator.category;
             indicatorsModel.push(newIndicator);
 
 
+
         }
-        //debugger;
+        // debugger;
 
         model.categoriesModel(categoriesModel);
         model.sourcesModel(sourcesModel);
         model.indicatorsModel(indicatorsModel);
+        model.indicatorsModelMaster(_.clone(indicatorsModel, true));
         //enable knockout
         ko.applyBindings(model);
 
@@ -249,10 +275,10 @@
 
     }
 
-    window.loadIndicatorList("http://apiurl", indicatorListLoadHandler);
+    window.loadIndicatorList(window.config.server + window.config.services.categories, indicatorListLoadHandler);
 
     var indicatorDataLoadHandler = function(response) {
-
+        debugger;
         //prepare region search 
         var availableRegions = [
             "Algeria",
@@ -276,12 +302,14 @@
             max: 2013,
             values: [1995, 2010],
             slide: function(event, ui) {
-                $("#years-label").val("$" + ui.values[0] + " - $" + ui.values[1]);
+                $("#years-label").val(ui.values[0] + " - " + ui.values[1]);
             }
         });
 
         $("#years-label").val($("#slider-years").slider("values", 0) +
             " - " + $("#slider-years").slider("values", 1));
+
+
 
         $('#viz-container').highcharts({
             title: {
