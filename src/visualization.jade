@@ -56,13 +56,13 @@ html(lang='en')
                         .face.front
                           div.well.category-wrapper()
                             span.badge(data-bind="html:length")
-                            div.well.category.icon-category-70()
+                            div(data-bind="attr:{class:'icon-category-' + label.replace(\" \",\"-\").toLowerCase() + ' well category'}")
                             h4(data-bind="html:label")
                         .face.back
                           div.list-group()
                             a.list-group-item.active(href="#" data-bind="html:label")
                             span(data-bind="foreach:indicators")
-                              a.list-group-item(href="#" data-bind='click:$root.selectIndicator,html:label' data-content="MCP" title="Source")                              
+                              a.list-group-item(href="#" data-bind='click:$root.selectIndicator,html:label,attr:{"data-content":"<strong>Source : </strong>" + source}' data-html="true")                              
                   //- .row
                   //-   .col-sm-4.col-md-4.col-sm-2.flip
                   //-     .card
@@ -111,7 +111,7 @@ html(lang='en')
                           div.list-group()
                             a.list-group-item.active(href="#" data-bind="html:label")
                             span(data-bind="foreach:indicators")
-                              a.list-group-item(href="#" data-bind='click:$root.selectIndicator,html:label' data-content="MCP" title="Source")
+                              a.list-group-item(href="#" data-bind='click:$root.selectIndicator,html:label,attr:{"data-content":"<strong>Category : </strong>" + category}'  data-html="true")
                     //- .col-sm-4.col-md-4.flip
                     //-     .card
                     //-       .face.front
@@ -131,21 +131,25 @@ html(lang='en')
                   .row
                     p
                   div.list-group.row(data-bind="foreach:indicatorsModel")
-                      a.list-group-item.col-md-4(href="#" data-bind='click:$root.selectIndicator,html:label' data-content="MCP" title="Source")
+                    a.list-group-item.col-md-4(href="#" data-bind='click:$root.selectIndicator,html:label,attr:{"data-content":"<strong>Category : </strong>" + category + "<br><strong>Source : </strong>" + source}' data-html="true")
+
+                //- TAB 2
                 #select-vizualization.tab-pane(role='tabpanel')
                   .row
                     .col-sm-4.col-md-4
-                      div.well.category-wrapper(data-bind='click:function(){selectVizualization("Pie Chart")}')
-                        div.well.category.noun-pie-15345()
-                        h4 Pie Chart
+                      div.well.category-wrapper(data-bind='click:function(){selectVizualization("bar")}')
+                        div.well.category.noun-bar-45998()
+                        h4 Bar
+                    //- .col-sm-4.col-md-4
+                    //-   div.well.category-wrapper(data-bind='click:function(){selectVizualization("Scatter Plot")}' )
+                    //-     div.well.category.noun-scatter-105477()
+                    //-     h4 Scatter
                     .col-sm-4.col-md-4
-                      div.well.category-wrapper(data-bind='click:function(){selectVizualization("Scatter Plot")}' )
-                        div.well.category.noun-scatter-105477()
-                        h4 Scatter
-                    .col-sm-4.col-md-4
-                      div.well.category-wrapper(data-bind='click:function(){selectVizualization("Line Chart")}')
+                      div.well.category-wrapper(data-bind='click:function(){selectVizualization("line")}')
                         div.well.category.noun-line-105490()
                         h4 Line
+
+                //-TAB 3
                 #vizualize.tab-pane(role='tabpanel')
                   .row
                     .col-md-2                      

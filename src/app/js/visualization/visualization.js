@@ -48,6 +48,8 @@
 
     var expandedCategory = false;
 
+
+    //KNOCKOUT MODEL
     var model = {
 
         selectIndicator: function() {
@@ -55,11 +57,12 @@
                 return;
             }
             var indicatorLabel = arguments[1].target.text;
-            this.activeIndicator(indicatorLabel);
-            var current = this.selectionTracker();
+
+            model.activeIndicator(indicatorLabel);
+            var current = model.selectionTracker();
             current.indicator = true;
             current.vizualization = false;
-            this.selectionTracker(current);
+            model.selectionTracker(current);
             //move to second
             $('#vizTabs a[href="#select-vizualization"]').tab('show')
 
@@ -70,11 +73,11 @@
         selectVizualization: function(type) {
 
             var vizualizationType = type;
-            this.activeChart(vizualizationType);
-            var current = this.selectionTracker();
+            model.activeChart(vizualizationType);
+            var current = model.selectionTracker();
             current.indicator = true;
             current.vizualization = true;
-            this.selectionTracker(current);
+            model.selectionTracker(current);
             //move to third tab
             $('#vizTabs a[href="#vizualize"]').tab('show');
 
@@ -106,6 +109,8 @@
         },
 
         showView: function(code) {
+
+
             $('#btn-primary').removeClass('active');
             $('#by-category').removeClass('active');
             $('#by-source').removeClass('active');
@@ -191,7 +196,7 @@
             categoriesModel.push(newCategory);
 
         }
-
+        //debugger;
         //Sort out Sources
         for (var src in sourcesAll.data) {
 
@@ -216,7 +221,7 @@
             sourcesModel.push(newSource);
 
         }
-
+        //debugger;
         //Get the actual categories and sources
         for (var ind in indicatorsAll.data) {
 
@@ -227,12 +232,12 @@
 
             newIndicator.source = _.get(sourcesAll, 'data[sourceId].label');
             newIndicator.category = _.get(categoriesAll, 'data[categoryId].label');
-
+            newIndicator.popup = newIndicator.source + "<br>" + newIndicator.category;
             indicatorsModel.push(newIndicator);
 
 
         }
-
+        //debugger;
 
         model.categoriesModel(categoriesModel);
         model.sourcesModel(sourcesModel);
