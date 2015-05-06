@@ -85,6 +85,11 @@
 
         },
 
+        selectCountry: function() {
+
+            debugger;
+        },
+
         expandCategory: function(model, evt) {
 
             expandedCategory = true;
@@ -164,9 +169,33 @@
 
         },
 
+        filterCountries: function(m, evt) {
+
+            var charCode = evt.charCode;
+            var value = evt.currentTarget.value;
+
+            var countries = model.countriesModelMaster();
+            model.countriesModel.removeAll();
+            //model.newSearch(false);
+
+            for (var x in countries) {
+
+                if (countries[x].label.toLowerCase().indexOf(value.toLowerCase()) >= 0) {
+                    model.countriesModel.push(countries[x]);
+                }
+            }
+
+            return true;
+
+        },
+
         activeIndicator: ko.observable(""),
 
         activeChart: ko.observable(""),
+
+        countriesModel: ko.observableArray([]),
+
+        countriesModelMaster: ko.observableArray([]),
 
         categoriesModel: ko.observableArray([]),
 
@@ -182,6 +211,12 @@
     }
 
 
+    var countriesListLoadHandler = function(response) {
+
+        model.countriesModel(response.data);
+        model.countriesModelMaster(_.clone(response.data, true));
+
+    }
 
 
 
@@ -276,6 +311,7 @@
     }
 
     window.loadIndicatorList(window.config.server + window.config.services.categories, indicatorListLoadHandler);
+    window.loadCountries("", countriesListLoadHandler);
 
     var indicatorDataLoadHandler = function(response) {
         debugger;

@@ -77,15 +77,16 @@
                   <div class="col-md-1">
                     <div class="tabbable tabs-left">
                       <ul class="nav nav-tabs">
-                        <li class="active"><a href="#a" data-toggle="tab">Category</a></li>
-                        <li><a href="#b" data-toggle="tab">Sources        </a></li>
-                        <li><a href="#c" data-toggle="tab">A - Z</a></li>
+                        <li class="active"><a href="#tab-category" data-toggle="tab">Category</a></li>
+                        <li><a href="#tab-source" data-toggle="tab">Sources        </a></li>
+                        <li><a href="#tab-alphabetic" data-toggle="tab">A - Z</a></li>
+                        <li><a href="#tab-countries" data-toggle="tab">Countries</a></li>
                       </ul>
                     </div>
                   </div>
                   <div class="col-md-11">
                     <div class="tab-content">
-                      <div id="a" class="tab-pane active">
+                      <div id="tab-category" class="tab-pane active">
                         <div data-bind="foreach:categoriesModel" class="row">
                           <div class="col-sm-4 col-md-4 col-sm-2 flip">
                             <div class="card">
@@ -102,7 +103,7 @@
                           </div>
                         </div>
                       </div>
-                      <div id="b" class="tab-pane">
+                      <div id="tab-source" class="tab-pane">
                         <div data-bind="foreach:sourcesModel" class="row">
                           <div class="col-sm-4 col-md-4 flip">
                             <div class="card">
@@ -119,7 +120,7 @@
                           </div>
                         </div>
                       </div>
-                      <div id="c" class="tab-pane">
+                      <div id="tab-alphabetic" class="tab-pane">
                         <div class="row">
                           <div class="col-md-12">
                             <input data-bind="event:{keyup:filterIndicators}" placeHolder="Filter" class="pull-right">
@@ -127,17 +128,28 @@
                         </div>
                         <div data-bind="foreach:indicatorsModel" class="list-group row"><a href="#" data-bind="click:$root.selectIndicator,html:label,attr:{&quot;data-content&quot;:&quot;&lt;strong&gt;Category : &lt;/strong&gt;&quot; + category + &quot;&lt;br&gt;&lt;strong&gt;Source : &lt;/strong&gt;&quot; + source,&quot;data-indicatorid&quot;:id}" data-html="true" class="list-group-item col-md-4"></a></div>
                       </div>
+                      <div id="tab-countries" class="tab-pane">
+                        <div class="row">
+                          <div class="col-md-12">
+                            <input data-bind="event:{keyup:filterCountries}" placeHolder="Filter" class="pull-right">
+                          </div>
+                        </div>
+                        <div class="row">
+                          <p></p>
+                        </div>
+                        <div data-bind="foreach:countriesModel" class="row">
+                          <div class="col-md-4 col-sm-4 col-xs-6">
+                            <div data-bind="click:$root.selectCountry" class="well category-wrapper">
+                              <div data-bind="style:{background:'url(app/images/flags_style1_medium/' + label.replace(/ /g,'_') + '.png) center center no-repeat'}" class="well category"></div>
+                              <h4 data-bind="html:label"></h4>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
                     </div>
                   </div>
                 </div>
               </div>
-              <div id="by-category" role="tabpanel" class="tab-pane active">                 </div>
-              <div id="by-source" role="tabpanel" class="tab-pane">
-                <div class="row">
-                  <p></p>
-                </div>
-              </div>
-              <div id="all-indicators" role="tabpanel" class="tab-pane"></div>
               <div id="select-vizualization" role="tabpanel" class="tab-pane">
                 <div class="row">
                   <div class="col-sm-4 col-md-4">

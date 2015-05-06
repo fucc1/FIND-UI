@@ -2,12 +2,13 @@
 
     window.loadIndicatorList = function(url, handlerFunc) {
 
-        // url = "data/indicators2.json";
+        url = "data/indicators2.json";
 
         $.ajax({
             url: url,
             jsonp: "callback",
-            dataType: "jsonp",
+            //dataType: "jsonp",
+            dataType: "json",
             data: {
 
             },
@@ -23,6 +24,21 @@
             url: url,
             jsonp: "prefix",
             dataType: "jsonp",
+            data: {
+
+            },
+            success: handlerFunc
+        });
+    }
+
+    window.loadCountries = function(url, handlerFunc) {
+        // url = "data/access-to-improved.json";
+        url = "data/countries.json";
+
+        $.ajax({
+            url: url,
+            // jsonp: "prefix",
+            dataType: "json",
             data: {
 
             },

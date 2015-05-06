@@ -59,14 +59,16 @@ html(lang='en')
                       .tabbable.tabs-left
                         ul.nav.nav-tabs
                           li.active
-                            a(href='#a', data-toggle='tab') Category
+                            a(href='#tab-category', data-toggle='tab') Category
                           li
-                            a(href='#b', data-toggle='tab') Sources        
+                            a(href='#tab-source', data-toggle='tab') Sources        
                           li
-                            a(href='#c', data-toggle='tab') A - Z
+                            a(href='#tab-alphabetic', data-toggle='tab') A - Z
+                          li
+                            a(href='#tab-countries', data-toggle='tab') Countries
                     .col-md-11
                         .tab-content
-                          #a.tab-pane.active
+                          #tab-category.tab-pane.active
                             .row(data-bind="foreach:categoriesModel")
                               .col-sm-4.col-md-4.col-sm-2.flip
                                 .card
@@ -112,7 +114,7 @@ html(lang='en')
                             //-           a.list-group-item(href="#" data-bind='click:selectIndicator' data-content="World Bank" title="Source") Disaster Readiness
                             //-           a.list-group-item(href="#" data-bind='click:selectIndicator' data-content="test abcdef" title="Source") Migration Management
                                  
-                          #b.tab-pane
+                          #tab-source.tab-pane
                             .row(data-bind="foreach:sourcesModel")
                               .col-sm-4.col-md-4.flip
                                 .card
@@ -138,29 +140,23 @@ html(lang='en')
                               //-           a.list-group-item.active(href="#" data-bind='click:selectIndicator' data-content="MCP" title="Source") Program Management
                               //-           a.list-group-item(href="#" data-bind='click:selectIndicator' data-content="MCP" title="Source") Program Design and Learning
                               //-           a.list-group-item(href="#" data-bind='click:selectIndicator' data-content="MCP" title="Source") Administration and Oversight        
-                          #c.tab-pane
+                          #tab-alphabetic.tab-pane
                             .row
                               .col-md-12
                                 input.pull-right(data-bind="event:{keyup:filterIndicators}" placeHolder="Filter")
                             div.list-group.row(data-bind="foreach:indicatorsModel")
                               a.list-group-item.col-md-4(href="#" data-bind='click:$root.selectIndicator,html:label,attr:{"data-content":"<strong>Category : </strong>" + category + "<br><strong>Source : </strong>" + source,"data-indicatorid":id}' data-html="true")
-                //- BY CATEGORY
-                #by-category.tab-pane.active(role='tabpanel')                  
-                  
-                  
-                  
-                
-                //- BY SOURCE
-                #by-source.tab-pane(role='tabpanel')
-                  .row
-                    p
-                  
-                    
-
-                //- ALL INDICTORS                 
-                #all-indicators.tab-pane(role='tabpanel')
-                  
-
+                          #tab-countries.tab-pane
+                            .row
+                              .col-md-12
+                                input.pull-right(data-bind="event:{keyup:filterCountries}" placeHolder="Filter")
+                            .row
+                              p
+                            .row(data-bind="foreach:countriesModel")
+                              .col-md-4.col-sm-4.col-xs-6
+                                div.well.category-wrapper(data-bind='click:$root.selectCountry')
+                                  div.well.category(data-bind="style:{background:'url(app/images/flags_style1_medium/' + label.replace(/ /g,'_') + '.png) center center no-repeat'}")
+                                  h4(data-bind="html:label")
                 //- TAB 2
                 #select-vizualization.tab-pane(role='tabpanel')
                   .row
