@@ -122,6 +122,16 @@ body {
   border-radius: 0px;
   border: 1px solid #244c80;
 }
+.app .jumbotron .main-search-results {
+  padding: 10px;
+}
+.app .jumbotron .main-search-results span {
+  background-color: #eae6e6;
+  padding: 5px;
+  margin: 5px;
+  display: inline-block;
+  cursor: pointer;
+}
 .app .footer h1 {
   font-size: 46px;
   font-weight: 200;
@@ -183,6 +193,7 @@ body {
   z-index: 10000;
   border-radius: 0 0 0.5em 0.5em;
   min-width: 50%;
+  box-shadow: 0 5px 10px rgba(0,0,0,0.2);
 }
 /****** MEDIA QUERIES ************/
 @media (min-width: 768px) {

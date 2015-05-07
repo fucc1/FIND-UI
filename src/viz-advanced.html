@@ -26,6 +26,7 @@
     <link href="//fonts.googleapis.com/css?family=Roboto:500,300,400&amp;subset=cyrillic,cyrillic-ext,latin,greek" rel="stylesheet">
   </head>
   <link href="app/css/visualization.css" rel="stylesheet">
+  <link href="app/css/jquery.multiselect.css" rel="stylesheet">
   <body class="app">
     <!-- Fixed navbar-->
     <nav class="navbar navbar-default navbar-fixed-top">
@@ -37,8 +38,8 @@
           <ul class="nav navbar-nav">
             <li><a href="indicators.html">INDICATORS</a></li>
             <li><a href="countries.html">COUNTRIES</a></li>
-            <li><a href="viz-advanced.html">CUSTOM VISUALIZATION</a></li>
-            <li><a href="#data-stories">DATA STORIES</a></li>
+            <li><a href="viz-advanced.html">VISUALIZATION</a></li>
+            <li><a href="index.html#data-stories">DATA STORIES</a></li>
           </ul>
           <ul class="nav navbar-nav navbar-right">
             <li><a href="#about">Login</a></li>
@@ -138,7 +139,7 @@
                           <p></p>
                         </div>
                         <div data-bind="foreach:countriesModel" class="row">
-                          <div class="col-md-4 col-sm-4 col-xs-6">
+                          <div class="col-md-3 col-sm-4 col-xs-6">
                             <div data-bind="click:$root.selectCountry" class="well category-wrapper">
                               <div data-bind="style:{background:'url(app/images/flags_style1_medium/' + label.replace(/ /g,'_') + '.png) center center no-repeat'}" class="well category"></div>
                               <h4 data-bind="html:label"></h4>
@@ -175,8 +176,20 @@
                     </div>
                     <div id="slider-years"></div>
                     <div class="ui-widget">
-                      <label for="regions">Regions</label>
-                      <input id="regions">
+                      <p id="callback" class="message success">Callback target</p>
+                      <select multiple="multiple" size="5">
+                        <optgroup label="Europe">
+                          <option value="Italy">Italy</option>&#x9;
+                          <option value="Germany">Germany</option>&#x9;
+                          <option value="France">France</option>
+                        </optgroup>
+                        <optgroup label="Asia">
+                          <option value="option4">Japan</option>&#x9;
+                          <option value="option5">South Korea</option>&#x9;
+                          <option value="option6">China</option>&#x9;
+                          <option value="option7">Sri Lanka</option>
+                        </optgroup>
+                      </select>
                     </div>
                   </div>
                   <div class="col-md-10">
@@ -218,10 +231,12 @@
 </html>
 <link href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css" rel="stylesheet">
 <script src="bower_components/jquery-ui/jquery-ui.js"></script>
+<script src="app/js/lib/jquery-ui.multiselect.min.js"></script>
 <script src="bower_components/lodash/lodash.min.js"></script>
 <script src="//code.highcharts.com/highcharts.js"></script>
 <script src="//code.highcharts.com/modules/exporting.js"></script>
 <script src="bower_components/knockout/dist/knockout.js"> </script>
 <script src="app/js/visualization/config.js"></script>
+<script src="app/js/visualization/loader.js"></script>
 <script src="app/js/visualization/loader.js"></script>
 <script src="app/js/visualization/visualization.js"></script>

@@ -313,22 +313,66 @@
     window.loadIndicatorList(window.config.server + window.config.services.categories, indicatorListLoadHandler);
     window.loadCountries("", countriesListLoadHandler);
 
+    // Under Five mortality rate
+
+    // GDP, per capita
+
+    // Poverty headcount ratio at $1.25 a day (PPP)
+
+    // Literacy rate
+
+    // Control of corruption
+
     var indicatorDataLoadHandler = function(response) {
-        debugger;
+
         //prepare region search 
-        var availableRegions = [
-            "Algeria",
-            "Albania",
-            "Angola",
-            "China",
-            "Colombia",
-            "Croatia"
-        ];
+        // var availableRegions = [
+        //     "Algeria",
+        //     "Albania",
+        //     "Angola",
+        //     "China",
+        //     "Colombia",
+        //     "Croatia"
+        // ];
 
-        $("#regions").autocomplete({
-            source: availableRegions
+        // $("#regions").autocomplete({
+        //     source: availableRegions
+        // });
+
+
+        //multiselect
+        var $callback = $("#callback");
+
+        $("select").multiselect({
+            click: function(event, ui) {
+                $callback.text(ui.value + ' ' + (ui.checked ? 'checked' : 'unchecked'));
+            },
+            beforeopen: function() {
+                $callback.text("Select about to be opened...");
+            },
+            open: function() {
+                $callback.text("Select opened!");
+            },
+            beforeclose: function() {
+                $callback.text("Select about to be closed...");
+            },
+            close: function() {
+                $callback.text("Select closed!");
+            },
+            checkAll: function() {
+                $callback.text("Check all clicked!");
+            },
+            uncheckAll: function() {
+                $callback.text("Uncheck all clicked!");
+            },
+            optgrouptoggle: function(event, ui) {
+                var values = $.map(ui.inputs, function(checkbox) {
+                    return checkbox.value;
+                }).join(", ");
+
+                $callback.html("<strong>Checkboxes " + (ui.checked ? "checked" : "unchecked") + ":</strong> " + values);
+            }
         });
-
 
         //prepare years
 
@@ -346,52 +390,10 @@
             " - " + $("#slider-years").slider("values", 1));
 
 
+        var highChartsJson = window.prepareHighchartsJson(response);
 
-        $('#viz-container').highcharts({
-            title: {
-                text: 'Water - Access to improved water source',
-                x: -20 //center
-            },
-            subtitle: {
-                text: 'World Bank',
-                x: -20
-            },
-            xAxis: { //years
-                categories: [1990, 1991, 1992, 1994, 1995, 1996, 1997, 1998, 1999, 2000, 2001, 2002, 2003]
-            },
-            yAxis: {
-                title: {
-                    text: 'Accessibility'
-                },
-                plotLines: [{
-                    value: 0,
-                    width: 1,
-                    color: '#808080'
-                }]
-            },
-            tooltip: {
-                valueSuffix: '°C'
-            },
-            legend: {
-                layout: 'vertical',
-                align: 'right',
-                verticalAlign: 'middle',
-                borderWidth: 0
-            },
-            series: [{
-                name: 'Angola',
-                data: [7.0, 6.9, 9.5, 14.5, 18.2, 21.5, 25.2, 26.5, 23.3, 18.3, 13.9, 9.6]
-            }, {
-                name: 'New York',
-                data: [-0.2, 0.8, 5.7, 11.3, 17.0, 22.0, 24.8, 24.1, 20.1, 14.1, 8.6, 2.5]
-            }, {
-                name: 'Berlin',
-                data: [-0.9, 0.6, 3.5, 8.4, 13.5, 17.0, 18.6, 17.9, 14.3, 9.0, 3.9, 1.0]
-            }, {
-                name: 'London',
-                data: [3.9, 4.2, 5.7, 8.5, 11.9, 15.2, 17.0, 16.6, 14.2, 10.3, 6.6, 4.8]
-            }]
-        });
+
+        $('#viz-container').highcharts(highChartsJson);
 
     }
 

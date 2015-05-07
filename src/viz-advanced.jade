@@ -2,6 +2,7 @@ doctype html
 html(lang='en')
   include ./includes/head.jade  
   link(href='app/css/visualization.css', rel='stylesheet')
+  link(href='app/css/jquery.multiselect.css', rel='stylesheet')
   body.app
     include ./includes/navigation.jade
     .container
@@ -153,7 +154,7 @@ html(lang='en')
                             .row
                               p
                             .row(data-bind="foreach:countriesModel")
-                              .col-md-4.col-sm-4.col-xs-6
+                              .col-md-3.col-sm-4.col-xs-6
                                 div.well.category-wrapper(data-bind='click:$root.selectCountry')
                                   div.well.category(data-bind="style:{background:'url(app/images/flags_style1_medium/' + label.replace(/ /g,'_') + '.png) center center no-repeat'}")
                                   h4(data-bind="html:label")
@@ -181,9 +182,26 @@ html(lang='en')
                         label(for="years-label") Years
                         input#years-label(readonly)
                       div#slider-years
+                      //- div.ui-widget
+                      //-   label(for="regions") Regions
+                      //-   input#regions
                       div.ui-widget
-                        label(for="regions") Regions
-                        input#regions
+                        p#callback.message.success Callback target
+                        select(multiple='multiple', size='5')
+                            optgroup(label='Europe')
+                              option(value='Italy') Italy
+                              | &#x9;
+                              option(value='Germany') Germany
+                              | &#x9;
+                              option(value='France') France
+                            optgroup(label='Asia')
+                              option(value='option4') Japan
+                              | &#x9;
+                              option(value='option5') South Korea
+                              | &#x9;
+                              option(value='option6') China
+                              | &#x9;
+                              option(value='option7') Sri Lanka
                     .col-md-10
                       div#viz-container
   
@@ -192,11 +210,13 @@ html(lang='en')
 link(href='//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css', rel='stylesheet')
 
 script(src='bower_components/jquery-ui/jquery-ui.js')
+script(src='app/js/lib/jquery-ui.multiselect.min.js')
 script(src='bower_components/lodash/lodash.min.js')
 script(src='//code.highcharts.com/highcharts.js')
 script(src='//code.highcharts.com/modules/exporting.js')
 script(src='bower_components/knockout/dist/knockout.js')  
 script(src='app/js/visualization/config.js')
+script(src='app/js/visualization/loader.js')
 script(src='app/js/visualization/loader.js')
 script(src='app/js/visualization/visualization.js')
 

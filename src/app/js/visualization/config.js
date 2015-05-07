@@ -5,7 +5,9 @@
 
         "services": {
 
-            "categories": "/categories"
+            "categories": "/categories",
+
+            "search": "/search"
         }
 
     }

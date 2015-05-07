@@ -36,8 +36,8 @@
           <ul class="nav navbar-nav">
             <li><a href="indicators.html">INDICATORS</a></li>
             <li><a href="countries.html">COUNTRIES</a></li>
-            <li><a href="viz-advanced.html">CUSTOM VISUALIZATION</a></li>
-            <li><a href="#data-stories">DATA STORIES</a></li>
+            <li><a href="viz-advanced.html">VISUALIZATION</a></li>
+            <li><a href="index.html#data-stories">DATA STORIES</a></li>
           </ul>
           <ul class="nav navbar-nav navbar-right">
             <li><a href="#about">Login</a></li>
@@ -59,6 +59,7 @@
               <div id="sticky-anchor"></div>
               <div id="sticky" class="form-group has-feedback">
                 <input type="text" placeHolder="Find a country or indicator" class="main-search"><span class="glyphicon glyphicon-search form-control-feedback"></span>
+                <div data-bind="foreach:searchResults,visible:searchResults().length&gt;0 &amp;&amp; searchValue().length&gt;=2" class="main-search-results"><span data-bind="html:label,click:$root.selectIndicator"></span></div>
               </div>
             </p>
           </div>
@@ -226,4 +227,6 @@
 </html>
 <script src="bower_components/letteringjs/jquery.lettering.js"></script>
 <script src="bower_components/textillate/jquery.textillate.js"></script>
+<script src="bower_components/knockout/dist/knockout.js"> </script>
+<script src="app/js/home/home.js"></script>
 <script src="app/js/common.js"></script>
