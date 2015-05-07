@@ -380,7 +380,7 @@
             range: true,
             min: 1990,
             max: 2013,
-            values: [1995, 2010],
+            values: [1994, 2015],
             slide: function(event, ui) {
                 $("#years-label").val(ui.values[0] + " - " + ui.values[1]);
             }

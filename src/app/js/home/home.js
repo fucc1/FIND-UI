@@ -33,20 +33,36 @@
             data: {
                 q: value
             },
-            success: searchHandler
+            success: function(response) {
+                searchHandler(response, value)
+            }
         });
 
     });
 
-    var searchHandler = function(response) {
-        response.data
+    var searchHandler = function(response, value) {
+
         model.searchResults.removeAll();
+
+        var valuesArr = value.split(" ");
 
         for (id in response.data) {
             var resultItem = {
                 id: id,
-                label: response.data[id]
+                label: ""
             }
+            var originalLabel = response.data[id];
+            var label = originalLabel;
+
+            _.forEach(valuesArr, function(v) {
+                var regex = new RegExp('(' + v + ')', 'gi');
+
+                label = label.replace(regex, "<strong style='color:red'>$1</strong>")
+            })
+
+            resultItem.label = label;
+
+
             model.searchResults.push(resultItem);
         }
 

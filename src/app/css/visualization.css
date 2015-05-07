@@ -58,7 +58,7 @@
   display: block;
 }
 .app #viz-container {
-  min-width: 310px;
+  min-width: 50%;
   height: 400px;
 }
 .app .selected-tab-value {

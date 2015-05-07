@@ -18,7 +18,9 @@
 
     window.loadIndicatorData = function(url, handlerFunc) {
         //url = "data/access-to-improved.json";
-        url = "data/gdo_per_capita.json";
+        url = "data/gdp_per_capita.json";
+
+        //url = "http://finddev.edip-maps.net/api/slicer/cube/geometry/cubes_aggregate?cubes=gdp_per_capita&drilldown=geometry__time|geometry__country_level0@name&format=json"
         // url = "http://api.worldbank.org/countries/all/indicators/NY.GDP.PCAP.KD?per_page=14200&format=jsonP";
 
         $.ajax({

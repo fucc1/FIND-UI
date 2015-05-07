@@ -189,19 +189,16 @@ html(lang='en')
                         p#callback.message.success Callback target
                         select(multiple='multiple', size='5')
                             optgroup(label='Europe')
-                              option(value='Italy') Italy
-                              | &#x9;
                               option(value='Germany') Germany
                               | &#x9;
                               option(value='France') France
+                              | &#x9;
+                              option(value='France') Sweden
                             optgroup(label='Asia')
-                              option(value='option4') Japan
-                              | &#x9;
-                              option(value='option5') South Korea
-                              | &#x9;
-                              option(value='option6') China
-                              | &#x9;
-                              option(value='option7') Sri Lanka
+                              option(value='Pakistan') Pakistan
+                            optgroup(label='Australia')
+                              option(value='Australia') Australia
+                              option(value='Australia') New Zealand
                     .col-md-10
                       div#viz-container
   
@@ -217,7 +214,7 @@ script(src='//code.highcharts.com/modules/exporting.js')
 script(src='bower_components/knockout/dist/knockout.js')  
 script(src='app/js/visualization/config.js')
 script(src='app/js/visualization/loader.js')
-script(src='app/js/visualization/loader.js')
+script(src='app/js/visualization/highcharts-json.js')
 script(src='app/js/visualization/visualization.js')
 
 
