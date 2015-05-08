@@ -15,7 +15,7 @@
         });
     });
 
-    //stick div
+    //stick div for homepage
     function sticky_relocate() {
         var window_top = $(window).scrollTop();
         var div_top = $('#sticky-anchor').offset().top;
@@ -52,7 +52,7 @@
 
         // custom set of 'in' effects. This effects whether or not the 
         // character is shown/hidden before or after an animation  
-        inEffects: [],
+        inEffects: ['flipInY'],
 
         // custom set of 'out' effects
         outEffects: [],
@@ -60,7 +60,7 @@
         // in animation settings
         in : {
             // set the effect name
-            effect: 'rollIn', //flipInY, fadeInLeftBig, rollIn
+            effect: 'flipInY', //flipInY, fadeInLeftBig, rollIn
 
             // set the delay factor applied to each consecutive character
             delayScale: 1.5,

@@ -89,7 +89,7 @@ body {
   border-radius: 0px;
 }
 .app .jumbotron h1 {
-  font-size: 46px;
+  font-size: 56px;
   font-weight: 200;
   font-style: normal;
   color: #fff;
@@ -194,6 +194,19 @@ body {
   border-radius: 0 0 0.5em 0.5em;
   min-width: 50%;
   box-shadow: 0 5px 10px rgba(0,0,0,0.2);
+}
+.carousel-indicators {
+  bottom: 0px;
+}
+.carousel-indicators li {
+  border: 2px solid #852224;
+}
+.carousel-control {
+  background-image: url("") !important;
+  display: none;
+}
+#data-stories h1 {
+  color: #fff;
 }
 /****** MEDIA QUERIES ************/
 @media (min-width: 768px) {

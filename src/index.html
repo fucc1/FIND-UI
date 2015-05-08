@@ -11,6 +11,7 @@
     <title>FIND UI</title>
     <!-- Bootstrap core CSS-->
     <link href="bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="bower_components/animate.css/animate.min.css" rel="stylesheet">
     <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
     <!--Customa and over rides-->
     <link href="app/css/app.css" rel="stylesheet">
@@ -82,115 +83,172 @@
           </div>
         </div>
       </div>
-      <div class="row vdivide">
-        <div class="vdivide col-md-6">
-          <div class="well bg-none">
-            <h3>Literacy rates</h3>
-            <div class="row">
-              <div class="col-md-3"><img src="http://placehold.it/125/A64444"></div>
-              <div class="col-md-9">
-                <p>Literacy rates are up 33 percent worldwide in the last 25 years, and primary school enrollment has tripled in that period.</p>
+      <div class="row">
+        <div id="carousel-example-generic" data-ride="carousel" class="col-md-12 carousel slide">
+          <!--Indicators-->
+          <ol class="carousel-indicators">
+            <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>    
+            <li data-target="#carousel-example-generic" data-slide-to="1"></li>    
+            <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+          </ol>
+          <!-- Wrapper for slides-->
+          <div role="listbox" class="carousel-inner">
+            <div class="item active">
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="well bg-none">
+                    <h3>Literacy rates</h3>
+                    <div class="row">
+                      <div class="col-md-3"><img src="http://placehold.it/125/A64444"></div>
+                      <div class="col-md-9">
+                        <p>Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="well bg-none">
+                    <h3>Under Five Mortality Rate</h3>
+                    <div class="row">
+                      <div class="col-md-3"><img src="http://placehold.it/125/A64444"></div>
+                      <div class="col-md-9">
+                        <p>Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur.</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="item">
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="well bg-none">
+                    <h3>GDP Growth</h3>
+                    <div class="row">
+                      <div class="col-md-3"><img src="http://placehold.it/125/A64444"></div>
+                      <div class="col-md-9">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="well bg-none">
+                    <h3>Forest Area</h3>
+                    <div class="row">
+                      <div class="col-md-3"><img src="http://placehold.it/125/A64444"></div>
+                      <div class="col-md-9">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="item">
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="well bg-none">
+                    <h3>Foreign Direct Investment</h3>
+                    <div class="row">
+                      <div class="col-md-3"><img src="http://placehold.it/125/A64444"></div>
+                      <div class="col-md-9">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="well bg-none">
+                    <h3>Population Growth</h3>
+                    <div class="row">
+                      <div class="col-md-3"><img src="http://placehold.it/125/A64444"></div>
+                      <div class="col-md-9">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
-        </div>
-        <div class="vdivide col-md-6">
-          <div class="well bg-none">
-            <h3>Infant and Child Death Rates</h3>
-            <div class="row">
-              <div class="col-md-3"><img src="http://placehold.it/125/A64444"></div>
-              <div class="col-md-9">
-                <p>In the past 50 years, infant and child death rates in the developing world have been reduced by 50 percent, and health conditions around the world have improved more during this period than in all previous human history.</p>
-              </div>
-            </div>
-          </div>
+          <!-- Controls--><a href="#carousel-example-generic" role="button" data-slide="prev" class="left carousel-control"><span aria-hidden="true" class="glyphicon glyphicon-chevron-left"></span>    <span class="sr-only">Previous</span></a>  <a href="#carousel-example-generic" role="button" data-slide="next" class="right carousel-control"><span aria-hidden="true" class="glyphicon glyphicon-chevron-right"></span>    <span class="sr-only">Next</span></a>
         </div>
       </div>
     </div>
     <div class="container">
       <p></p>
     </div>
-    <div class="container-full">
-      <div id="data-stories" class="row bg-medium footer">
-        <div class="well bg-medium font-light">
-          <h1>Data Stories</h1>
-          <div class="col-md-4 font-dark">
-            <div class="well bg-container">
-              <h3>Latest Updates</h3>
-              <div class="row">
-                <div class="col-md-3"><img src="http://placehold.it/76/A64444"></div>
-                <div class="col-md-9">
-                  <p>Synergizes communities. Visualize and compare the data to better understand the context. Share what you discover.</p>
-                </div>
-              </div>
-              <div class="row">
-                <div class="col-md-3"><img src="http://placehold.it/76/A64444"></div>
-                <div class="col-md-9">
-                  <p>Synergizes communities. Visualize and compare the data to better understand the context. Share what you discover.</p>
-                </div>
-              </div>
-              <div class="row">
-                <div class="col-md-3"><img src="http://placehold.it/76/A64444"></div>
-                <div class="col-md-9">
-                  <p>Synergizes communities. Visualize and compare the data to better understand the context. Share what you discover.</p>
-                </div>
-              </div>
-              <div class="row">
-                <div class="col-md-3"><img src="http://placehold.it/76/A64444"></div>
-                <div class="col-md-9">
-                  <p>Synergizes communities. Visualize and compare the data to better understand the context. Share what you discover.</p>
-                </div>
+    <div id="data-stories" class="container-full bg-medium">
+      <div class="row">
+        <div class="col-md-12 text-center">
+          <h1>Data Stories          </h1>
+        </div>
+      </div>
+      <div class="row footer">
+        <div class="col-md-4">
+          <div class="well">
+            <h3>Scatter plots</h3>
+            <div class="row">
+              <div class="col-md-6"><img src="app/images/chart_scatter.png"></div>
+              <div class="col-md-6">
+                <p>Literacy rates are up 33 percent worldwide in the last 25 years, and primary school enrollment has tripled in that period.</p>
               </div>
             </div>
           </div>
-          <div class="col-md-8 font-dark">
+        </div>
+        <div class="col-md-4">
+          <div class="well">
+            <h3>Line Chart, Series</h3>
             <div class="row">
+              <div class="col-md-6"><img src="app/images/chart_pie.png"></div>
               <div class="col-md-6">
-                <div class="well bg-container">
-                  <h3>Scatter plots</h3>
-                  <div class="row">
-                    <div class="col-md-6"><img src="app/images/chart_scatter.png"></div>
-                    <div class="col-md-6">
-                      <p>Literacy rates are up 33 percent worldwide in the last 25 years, and primary school enrollment has tripled in that period.</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="col-md-6">
-                <div class="well bg-container">
-                  <h3>Line Chart, Series</h3>
-                  <div class="row">
-                    <div class="col-md-6"><img src="app/images/chart_pie.png"></div>
-                    <div class="col-md-6">
-                      <p>In the past 50 years, infant and child death rates in the developing world have been reduced by 50 percent, and health.</p>
-                    </div>
-                  </div>
-                </div>
+                <p>In the past 50 years, infant and child death rates in the developing world have been reduced by 50 percent, and health.</p>
               </div>
             </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="well">
+            <h3>Curve Charts</h3>
             <div class="row">
+              <div class="col-md-6"><img src="app/images/chart_curved.png"></div>
               <div class="col-md-6">
-                <div class="well bg-container">
-                  <h3>Curve Charts</h3>
-                  <div class="row">
-                    <div class="col-md-6"><img src="app/images/chart_curved.png"></div>
-                    <div class="col-md-6">
-                      <p>Literacy rates are up 33 percent worldwide in the last 25 years, and primary school enrollment has tripled in that period.</p>
-                    </div>
-                  </div>
-                </div>
+                <p>Literacy rates are up 33 percent worldwide in the last 25 years, and primary school enrollment has tripled in that period.</p>
               </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="well">
+            <h3>Curve Charts</h3>
+            <div class="row">
+              <div class="col-md-6"><img src="app/images/chart_curved.png"></div>
               <div class="col-md-6">
-                <div class="well bg-container map-bg">
-                  <h3>Maps</h3>
-                  <div class="row">
-                    <div style="visibility:hidden" class="col-md-12"><br><br><br><br></div>
-                    <div class="row">
-                      <div class="col-md-12">
-                        <p>This is an introduction text. It has a fixed size and custom line height, so you can experiment with it.</p>
-                      </div>
-                    </div>
-                  </div>
+                <p>Literacy rates are up 33 percent worldwide in the last 25 years, and primary school enrollment has tripled in that period.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="well">
+            <h3>Curve Charts</h3>
+            <div class="row">
+              <div class="col-md-6"><img src="app/images/chart_curved.png"></div>
+              <div class="col-md-6">
+                <p>Literacy rates are up 33 percent worldwide in the last 25 years, and primary school enrollment has tripled in that period.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="well map-bg">
+            <h3>Maps</h3>
+            <div class="row">
+              <div style="visibility:hidden" class="col-md-12"><br><br><br><br><br></div>
+              <div class="row">
+                <div class="col-md-12">
+                  <p>This is an introduction text. It has a fixed size and custom line height, so you can experiment with it.</p>
                 </div>
               </div>
             </div>
