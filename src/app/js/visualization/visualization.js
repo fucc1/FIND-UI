@@ -56,9 +56,10 @@
             if (expandedCategory) {
                 return;
             }
-            var indicatorLabel = arguments[1].target.text;
-
+            var indicatorLabel = arguments[0].label;
+            var indicatorId = arguments[0].id;
             model.activeIndicator(indicatorLabel);
+            model.activeIndicatorId(indicatorId);
             var current = model.selectionTracker();
             current.indicator = true;
             current.vizualization = false;
@@ -66,7 +67,7 @@
             //move to second
             $('#vizTabs a[href="#select-vizualization"]').tab('show')
 
-            window.loadIndicatorData("http://apiurl", indicatorDataLoadHandler);
+            window.loadIndicatorData(indicatorId, indicatorDataLoadHandler);
 
         },
 
@@ -79,8 +80,13 @@
             current.vizualization = true;
             model.selectionTracker(current);
             //move to third tab
+
             $('#vizTabs a[href="#vizualize"]').tab('show');
 
+            var highChartsJson = model.activeData();
+            highChartsJson.title.text = model.activeIndicator();
+            //highChartsJson.subtitle.text = type;
+            $('#viz-container').highcharts(model.activeData());
 
 
         },
@@ -191,7 +197,11 @@
 
         activeIndicator: ko.observable(""),
 
-        activeChart: ko.observable(""),
+        activeIndicatorId: ko.observable(""),
+
+        activeChart: ko.observable(""), //pie, bar
+
+        activeData: ko.observable({}), //data itself
 
         countriesModel: ko.observableArray([]),
 
@@ -241,6 +251,7 @@
                 var cloneIndicator = _.clone(indicatorsAll.data[indicatorId], true);
 
                 cloneIndicator.source = sourceLabel;
+                cloneIndicator.id = indicatorId;
                 return cloneIndicator;
             });
             //debugger;
@@ -390,10 +401,11 @@
             " - " + $("#slider-years").slider("values", 1));
 
 
-        var highChartsJson = window.prepareHighchartsJson(response);
+        var highChartsJson = window.prepareHighchartsJson(response, model.activeIndicator(), model.activeChart(), model.activeIndicatorId());
 
+        model.activeData(highChartsJson);
 
-        $('#viz-container').highcharts(highChartsJson);
+        // $('#viz-container').highcharts(highChartsJson, model.activeIndicator(), model.activeChart());
 
     }
 

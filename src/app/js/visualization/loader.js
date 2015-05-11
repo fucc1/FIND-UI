@@ -24,21 +24,27 @@
         });
     }
 
-    window.loadIndicatorData = function(url, handlerFunc) {
-        //url = "data/access-to-improved.json";
-        url = "data/gdp_per_capita.json";
+    window.loadIndicatorData = function(indicatorId, handlerFunc) {
+
+        var urlTemplate = "http://finddev.edip-maps.net/api/slicer/cube/geometry/cubes_aggregate?cubes={indicator_id}&drilldown=geometry__time|geometry__country_level0@name&format=json"
+        var url = urlTemplate.replace("{indicator_id}", indicatorId);
+        //url = "data/gdp_per_capita.json";
         //gdp_per_capita
         //literacy_rate_adult_total
         //control_of_corruption
 
         //url = "http://finddev.edip-maps.net/api/slicer/cube/geometry/cubes_aggregate?cubes=gdp_per_capita&drilldown=geometry__time|geometry__country_level0@name&format=json"
         // url = "http://api.worldbank.org/countries/all/indicators/NY.GDP.PCAP.KD?per_page=14200&format=jsonP";
-
+        //debugger;
         $.ajax({
             url: url,
             //jsonp: "prefix",
             //dataType: "jsonp",
             dataType: "json",
+            // xhrFields: {
+            //     "withCredentials": true
+            // },
+
             data: {
 
             },
