@@ -10,13 +10,13 @@
     // http://finddev.edip-maps.net/api/slicer/cube/geometry/cubes_aggregate?cubes=control_of_corruption&drilldown=geometry__time|geometry__country_level0@name&format=csv
     window.loadIndicatorList = function(url, handlerFunc) {
 
-        url = "data/indicators2.json";
+        //url = "data/indicators2.json";
 
         $.ajax({
             url: url,
             jsonp: "callback",
-            //dataType: "jsonp",
-            dataType: "json",
+            dataType: "jsonp",
+            //dataType: "json",
             data: {
 
             },

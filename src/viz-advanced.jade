@@ -59,9 +59,9 @@ html(lang='en')
                     .col-md-1
                       .tabbable.tabs-left
                         ul.nav.nav-tabs
-                          li.active
-                            a(href='#tab-category', data-toggle='tab') Category
                           li
+                            a(href='#tab-category', data-toggle='tab') Category
+                          li.active
                             a(href='#tab-source', data-toggle='tab') Sources        
                           li
                             a(href='#tab-alphabetic', data-toggle='tab') A - Z
@@ -69,7 +69,7 @@ html(lang='en')
                             a(href='#tab-countries', data-toggle='tab') Countries
                     .col-md-11
                         .tab-content
-                          #tab-category.tab-pane.active
+                          #tab-category.tab-pane
                             .row(data-bind="foreach:categoriesModel")
                               .col-sm-4.col-md-4.col-sm-2.flip
                                 .card
@@ -115,7 +115,7 @@ html(lang='en')
                             //-           a.list-group-item(href="#" data-bind='click:selectIndicator' data-content="World Bank" title="Source") Disaster Readiness
                             //-           a.list-group-item(href="#" data-bind='click:selectIndicator' data-content="test abcdef" title="Source") Migration Management
                                  
-                          #tab-source.tab-pane
+                          #tab-source.tab-pane.active
                             .row(data-bind="foreach:sourcesModel")
                               .col-sm-4.col-md-4.flip
                                 .card

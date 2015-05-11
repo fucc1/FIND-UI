@@ -80,8 +80,8 @@
                   <div class="col-md-1">
                     <div class="tabbable tabs-left">
                       <ul class="nav nav-tabs">
-                        <li class="active"><a href="#tab-category" data-toggle="tab">Category</a></li>
-                        <li><a href="#tab-source" data-toggle="tab">Sources        </a></li>
+                        <li><a href="#tab-category" data-toggle="tab">Category</a></li>
+                        <li class="active"><a href="#tab-source" data-toggle="tab">Sources        </a></li>
                         <li><a href="#tab-alphabetic" data-toggle="tab">A - Z</a></li>
                         <li><a href="#tab-countries" data-toggle="tab">Countries</a></li>
                       </ul>
@@ -89,7 +89,7 @@
                   </div>
                   <div class="col-md-11">
                     <div class="tab-content">
-                      <div id="tab-category" class="tab-pane active">
+                      <div id="tab-category" class="tab-pane">
                         <div data-bind="foreach:categoriesModel" class="row">
                           <div class="col-sm-4 col-md-4 col-sm-2 flip">
                             <div class="card">
@@ -106,7 +106,7 @@
                           </div>
                         </div>
                       </div>
-                      <div id="tab-source" class="tab-pane">
+                      <div id="tab-source" class="tab-pane active">
                         <div data-bind="foreach:sourcesModel" class="row">
                           <div class="col-sm-4 col-md-4 flip">
                             <div class="card">
