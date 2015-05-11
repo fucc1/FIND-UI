@@ -35,10 +35,11 @@
         </div>
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
-            <li><a href="indicators.html">INDICATORS</a></li>
-            <li><a href="countries.html">COUNTRIES</a></li>
+            <li><a href="viz-advanced.html">INDICATORS</a></li>
+            <li><a href="viz-advanced.html">COUNTRIES</a></li>
             <li><a href="viz-advanced.html">VISUALIZATION</a></li>
             <li><a href="index.html#data-stories">DATA STORIES</a></li>
+            <li><a href="index.html#updates">UPDATES</a></li>
           </ul>
           <ul class="nav navbar-nav navbar-right">
             <li><a href="#about">Login</a></li>
@@ -87,9 +88,9 @@
         <div id="carousel-example-generic" data-ride="carousel" class="col-md-12 carousel slide">
           <!--Indicators-->
           <ol class="carousel-indicators">
-            <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>    
-            <li data-target="#carousel-example-generic" data-slide-to="1"></li>    
-            <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+            <li data-target="#carousel-example-generic" data-slide-to="0" title="Literacy Rates, and Under Five Mortality Rate" class="active"></li>    
+            <li data-target="#carousel-example-generic" data-slide-to="1" title="GDP Growth, and Forest Area"></li>    
+            <li data-target="#carousel-example-generic" data-slide-to="2" title="Foreign Direct Investment, and Population"></li>
           </ol>
           <!-- Wrapper for slides-->
           <div role="listbox" class="carousel-inner">
@@ -179,76 +180,72 @@
     <div class="container">
       <p></p>
     </div>
-    <div id="data-stories" class="container-full bg-medium">
-      <div class="row">
-        <div class="col-md-12 text-center">
-          <h1>Data Stories          </h1>
-        </div>
-      </div>
+    <div class="container-full bg-medium">
       <div class="row footer">
-        <div class="col-md-4">
-          <div class="well">
-            <h3>Scatter plots</h3>
-            <div class="row">
-              <div class="col-md-6"><img src="app/images/chart_scatter.png"></div>
-              <div class="col-md-6">
-                <p>Literacy rates are up 33 percent worldwide in the last 25 years, and primary school enrollment has tripled in that period.</p>
-              </div>
+        <div id="updates" class="col-md-4 updates">
+          <div class="row">
+            <div class="col-md-12 text-center">
+              <h1>Updates   </h1>
             </div>
           </div>
-        </div>
-        <div class="col-md-4">
-          <div class="well">
-            <h3>Line Chart, Series</h3>
-            <div class="row">
-              <div class="col-md-6"><img src="app/images/chart_pie.png"></div>
-              <div class="col-md-6">
-                <p>In the past 50 years, infant and child death rates in the developing world have been reduced by 50 percent, and health.</p>
-              </div>
-            </div>
+          <div class="well bg-none"> 
+            <ul>
+              <li>New indicators from @WorldBank have been added to the site! See the latest trends! #FINDit</li>
+              <li>New indicators from @MCCgov have been added. Check them out! #FINDit      </li>
+              <li>Ever wondered how GDP and Greenhouse Gas Emissions are related? #FINDit here!</li>
+            </ul>
           </div>
         </div>
-        <div class="col-md-4">
-          <div class="well">
-            <h3>Curve Charts</h3>
-            <div class="row">
-              <div class="col-md-6"><img src="app/images/chart_curved.png"></div>
-              <div class="col-md-6">
-                <p>Literacy rates are up 33 percent worldwide in the last 25 years, and primary school enrollment has tripled in that period.</p>
-              </div>
+        <div id="data-stories" class="col-md-8">
+          <div class="row">
+            <div class="col-md-12 text-center">
+              <h1>Data Stories    </h1>
             </div>
           </div>
-        </div>
-        <div class="col-md-4">
-          <div class="well">
-            <h3>Curve Charts</h3>
-            <div class="row">
-              <div class="col-md-6"><img src="app/images/chart_curved.png"></div>
-              <div class="col-md-6">
-                <p>Literacy rates are up 33 percent worldwide in the last 25 years, and primary school enrollment has tripled in that period.</p>
+          <div class="row">
+            <div class="col-md-6">
+              <h3>Infant and child mortality is lower than ever</h3>
+              <div class="well">
+                <div class="row">
+                  <div class="col-md-3"><img src="app/images/chart_scatter.png"></div>
+                  <div class="col-md-9">
+                    <p>In 1970, 17.6 million children under the age of five died worldwide annually — about 143 infant and childhood deaths per 1000 children born.</p>
+                  </div>
+                </div>
               </div>
             </div>
-          </div>
-        </div>
-        <div class="col-md-4">
-          <div class="well">
-            <h3>Curve Charts</h3>
-            <div class="row">
-              <div class="col-md-6"><img src="app/images/chart_curved.png"></div>
-              <div class="col-md-6">
-                <p>Literacy rates are up 33 percent worldwide in the last 25 years, and primary school enrollment has tripled in that period.</p>
+            <div class="col-md-6">
+              <h3>Vaccines, women's education, & reducing poverty are key</h3>
+              <div class="well">                 
+                <div class="row">
+                  <div class="col-md-3"><img src="app/images/chart_pie.png"></div>
+                  <div class="col-md-9">
+                    <p>As one of the UN's Millennium Development Goals set in 2000, the organization sought the global under-five mortality rate by two-thirds by 2015, as compared to 1990 levels.</p>
+                  </div>
+                </div>
               </div>
             </div>
-          </div>
-        </div>
-        <div class="col-md-4">
-          <div class="well map-bg">
-            <h3>Maps</h3>
-            <div class="row">
-              <div style="visibility:hidden" class="col-md-12"><br><br><br><br><br></div>
-              <div class="row">
-                <div class="col-md-12">
-                  <p>This is an introduction text. It has a fixed size and custom line height, so you can experiment with it.</p>
+            <div class="col-md-6">
+              <h3>There are still places where many infants and children die</h3>
+              <div class="well">                 
+                <div class="row">
+                  <div class="col-md-3"><img src="app/images/chart_curved.png"></div>
+                  <div class="col-md-9">
+                    <p>The countries that are unlikely to hit the Millennium Development Goal — and still have high infant and childhood mortality rates — are mostly clustered in Sub-Saharan</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <h3>Maps</h3>
+              <div class="well map-bg">                 
+                <div class="row">
+                  <div style="visibility:hidden" class="col-md-12"><br><br><br><br></div>
+                  <div class="row">
+                    <div class="col-md-12">
+                      <p>This is an introduction text. It has a fixed size and custom line height, so you can experiment with it.</p>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>

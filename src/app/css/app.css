@@ -137,8 +137,15 @@ body {
   font-weight: 200;
   font-style: normal;
   color: #fff;
-  text-align: left;
+  text-align: center;
   padding-bottom: 20px;
+}
+.app .footer .updates ul {
+  color: #fff;
+  font-size: 22px;
+}
+.app .footer #data-stories h3 {
+  color: #fff;
 }
 .app .footer-links {
   font-weight: 200;
@@ -193,6 +200,9 @@ body {
   z-index: 10000;
   border-radius: 0 0 0.5em 0.5em;
   min-width: 50%;
+}
+#sticky.stick input,
+#sticky.stick .main-search-results span {
   box-shadow: 0 5px 10px rgba(0,0,0,0.2);
 }
 .carousel-indicators {

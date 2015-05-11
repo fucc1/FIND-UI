@@ -1,7 +1,6 @@
 (function() {
 
 
-
     var model = {
         searchResults: ko.observableArray([]),
 

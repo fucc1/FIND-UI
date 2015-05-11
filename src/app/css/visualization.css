@@ -144,6 +144,9 @@
 .app .collapsed .glyphicon-circle-arrow-down {
   display: none;
 }
+.nav-tabs>li>a {
+  border: 0px solid #000;
+}
 .tabs-left > .nav-tabs {
   border-bottom: 0;
   float: left;

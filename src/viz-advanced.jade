@@ -144,13 +144,13 @@ html(lang='en')
                           #tab-alphabetic.tab-pane
                             .row
                               .col-md-12
-                                input.pull-right(data-bind="event:{keyup:filterIndicators}" placeHolder="Filter")
+                                input.pull-left(data-bind="event:{keyup:filterIndicators}" placeHolder="Filter")
                             div.list-group.row(data-bind="foreach:indicatorsModel")
                               a.list-group-item.col-md-4(href="#" data-bind='click:$root.selectIndicator,html:label,attr:{"data-content":"<strong>Category : </strong>" + category + "<br><strong>Source : </strong>" + source,"data-indicatorid":id}' data-html="true")
                           #tab-countries.tab-pane
                             .row
                               .col-md-12
-                                input.pull-right(data-bind="event:{keyup:filterCountries}" placeHolder="Filter")
+                                input.pull-left(data-bind="event:{keyup:filterCountries}" placeHolder="Filter")
                             .row
                               p
                             .row(data-bind="foreach:countriesModel")

@@ -37,10 +37,11 @@
         </div>
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
-            <li><a href="indicators.html">INDICATORS</a></li>
-            <li><a href="countries.html">COUNTRIES</a></li>
+            <li><a href="viz-advanced.html">INDICATORS</a></li>
+            <li><a href="viz-advanced.html">COUNTRIES</a></li>
             <li><a href="viz-advanced.html">VISUALIZATION</a></li>
             <li><a href="index.html#data-stories">DATA STORIES</a></li>
+            <li><a href="index.html#updates">UPDATES</a></li>
           </ul>
           <ul class="nav navbar-nav navbar-right">
             <li><a href="#about">Login</a></li>
@@ -125,7 +126,7 @@
                       <div id="tab-alphabetic" class="tab-pane">
                         <div class="row">
                           <div class="col-md-12">
-                            <input data-bind="event:{keyup:filterIndicators}" placeHolder="Filter" class="pull-right">
+                            <input data-bind="event:{keyup:filterIndicators}" placeHolder="Filter" class="pull-left">
                           </div>
                         </div>
                         <div data-bind="foreach:indicatorsModel" class="list-group row"><a href="#" data-bind="click:$root.selectIndicator,html:label,attr:{&quot;data-content&quot;:&quot;&lt;strong&gt;Category : &lt;/strong&gt;&quot; + category + &quot;&lt;br&gt;&lt;strong&gt;Source : &lt;/strong&gt;&quot; + source,&quot;data-indicatorid&quot;:id}" data-html="true" class="list-group-item col-md-4"></a></div>
@@ -133,7 +134,7 @@
                       <div id="tab-countries" class="tab-pane">
                         <div class="row">
                           <div class="col-md-12">
-                            <input data-bind="event:{keyup:filterCountries}" placeHolder="Filter" class="pull-right">
+                            <input data-bind="event:{keyup:filterCountries}" placeHolder="Filter" class="pull-left">
                           </div>
                         </div>
                         <div class="row">

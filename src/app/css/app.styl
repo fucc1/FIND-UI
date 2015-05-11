@@ -160,7 +160,8 @@ html, body
 			cursor pointer
 		
 
-		
+	
+
 .app .footer
 	
 	h1
@@ -168,8 +169,20 @@ html, body
 		font-weight $weightLight
 		font-style normal
 		color $colorLight
-		text-align left
+		text-align center
 		padding-bottom 20px
+		
+	.updates
+		
+		ul			
+			color $colorLight
+			font-size 22px
+			
+	#data-stories
+		
+		h3
+			color $colorLight
+			
 		
 .app .footer-links
 	font-weight $weightLight
@@ -228,7 +241,10 @@ html, body
 	z-index 10000
 	border-radius 0 0 0.5em 0.5em
 	min-width 50%
-	box-shadow 0 5px 10px rgba(0,0,0,.2)
+	
+	input,
+	.main-search-results span
+		box-shadow 0 5px 10px rgba(0,0,0,.2)
 	
 .carousel-indicators
 	bottom 0px
